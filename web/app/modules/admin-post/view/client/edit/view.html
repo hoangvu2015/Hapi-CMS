@@ -1,0 +1,154 @@
+<div id="mod-post">
+	<section class="content-header">
+		<h1>
+			<span>Bài viết</span>
+			<small>{{postEdit.queryParams.id ? 'Cập nhật' : 'Thêm mới'}}</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+			<li class="active">Bài viết</li>
+		</ol>
+	</section>
+	<div class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-header with-border no-caption">
+						<h3 class="box-title">Quick Example</h3>
+					</div>
+					<form novalidate id="frmPost" name="frmPost" ng-submit="postEdit.save(frmPost.$valid)">
+						<div class="box-body">
+							<!-- Toolbar -->
+							<div class="toolbar">
+								<div class="form-inline pull-right">
+									<div class="form-group form-action">
+										<button bz-submit type="submit" class="btn btn-primary btn-submit" ng-class="{'loading-btn': postEdit.lockForm}" ng-disabled="postEdit.lockForm">
+											<i class="glyphicon glyphicon-floppy-disk" ng-if="!postEdit.lockForm"></i>
+											<span>Lưu</span>
+										</button>
+										<a ui-sref="post" class="btn btn-primary">
+											<i class="glyphicon glyphicon-remove"></i>
+											<span>Hủy bỏ</span>
+										</a>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<!-- End: Toolbar -->
+							<div class="row">
+								<!-- Tên -->
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="txtName">Tên <span class="required">*</span></label>
+										<input id="txtName" name="txtName" class="form-control" type="text" ng-model="postEdit.formData.name" ng-pattern="/[a-zA-Z0-9]/" required />
+										<div class="messages-error" ng-messages="frmPost.txtName.$error" ng-if="postEdit.submitted">
+											<div ng-message="required">Bạn chưa nhập tên.</div>
+											<div ng-message="pattern">Tên không được chứa các ký tự đặc biệt.</div>
+										</div>
+									</div>
+								</div>
+								<!-- Publish -->
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Publish</label>
+										<br>
+										<label role="switcher">
+											<input id="chkPublish" type="checkbox" ng-model="postEdit.formData.status" ng-true-value="1" ng-false-value="0">
+											<i></i>
+											<span></span>
+										</label>
+									</div>
+								</div>
+								<!-- Danh mục -->
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="ddlCategories">Danh mục</label>
+										<select name="ddlCategories" id="ddlCategories" class="ddl form-control" ng-model="postEdit.formData.categoryId">
+											<option value="">-- Chọn --</option>
+											<option ng-repeat="cate in postEdit.categories track by cate.id" value="{{cate.id}}" ng-bind="::cate.name"></option>
+										</select>
+									</div>
+								</div>
+								<!-- Publish Date -->
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Publish Date</label>
+										<input
+										class="form-control"
+										id="txtPublishDate"
+										name="txtPublishDate"
+										type="text"
+										bz-date-picker
+										date-format="@"
+										date-min="-3y"
+										date-max="3y"
+										year-range="c-2:c+2"
+										change-month="true"
+										change-year="true"
+										ng-model="postEdit.formData.publishDate"
+										required />
+										<div class="messages-error" ng-messages="frmPost.txtPublishDate.$error" ng-if="postEdit.submitted">
+											<div ng-message="required">Bạn chưa nhập ngày.</div>
+											<div ng-message="pattern">Ngày không hợp lệ.</div>
+										</div>
+									</div>
+								</div>
+								<!-- Hình ảnh -->
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="txtFile">Hình ảnh</label>
+										<input type="file" class="form-control" id="txtFile" name="txtFile" bz-valid-file-input file-size="10000000" file-type="image/jpeg,image/png" accept=".jpg,.png,.jpeg|images/*" ng-model="postEdit.formData.image" /><!-- required -->
+										<div class="messages-error" ng-messages="frmPost.txtFile.$error" ng-if="postEdit.submitted">
+											<div ng-message="required">Bạn chưa chọn tập tin.</div>
+											<div ng-message="filesize">Kích thước tập tin quá lớn, chỉ hỗ trợ tối đa 10mb.</div>
+											<div ng-message="filetype">Tập tin không hỗ trợ.</div>
+										</div>
+									</div>
+								</div>
+								<!-- Nội dung ngắn -->
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="txtIntro">Intro <span class="required">*</span></label>
+										<textarea id="txtIntro" name="txtIntro" class="form-control" ng-model="postEdit.formData.intro" bz-word-count max-words="100" required /></textarea>
+										<div class="messages-error" ng-messages="frmPost.txtIntro.$error" ng-if="postEdit.submitted">
+											<div ng-message="required">Bạn chưa nhập nội dung.</div>
+											<div ng-message="maxwords">Nội dung chứa tối đa 100 từ.</div>
+										</div>
+									</div>
+								</div>
+								<!-- Nội dung -->
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="txtMessage">Nội dung <span class="required">*</span></label>
+										<textarea ck-editor id="txtMessage" name="txtMessage" class="form-control" ng-model="postEdit.formData.body" required /></textarea>
+										<div class="messages-error" ng-messages="frmPost.txtMessage.$error" ng-if="postEdit.submitted">
+											<div ng-message="required">Bạn chưa nhập nội dung.</div>
+										</div>
+									</div>
+								</div>
+								<!-- Từ khóa -->
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Từ khóa</label>
+										<bz-tag ng-model="postEdit.formData.tag"></bz-tag>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="box-footer">
+							<a ui-sref="post" class="btn btn-primary">
+								<i class="glyphicon glyphicon-remove"></i>
+								<span>Hủy bỏ</span>
+							</a>
+							<button bz-submit type="submit" class="btn btn-primary btn-submit" ng-class="{'loading-btn': postEdit.lockForm}" ng-disabled="postEdit.lockForm">
+								<i class="glyphicon glyphicon-floppy-disk" ng-if="!postEdit.lockForm"></i>
+								<span>Lưu</span>
+							</button>
+						</div>
+						<pre>{{postEdit.formData | json}}</pre>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,48 @@
+#pop-assign-contact{
+	max-width: 640px;
+	.color-primary{
+		color: #3c8dbc !important;
+	}
+	.color-success{
+		color: #00a65a !important;
+	}
+	.filter-wrap{
+		text-align: center;
+		.txt-date-picker{
+			width:250px;
+		}
+	}
+	.grid .grid-head{
+		font-weight: bold;
+		.col{
+			width:50%;
+			float: left;
+			text-align: left;
+			padding: 10px;
+		}
+		.col-quantity{
+			text-align: right;
+		}
+	}
+	.grid .grid-body{
+		.col{
+			width:50%;
+			float: left;
+			padding: 10px;
+		}
+		.col-quantity{
+			text-align: right;
+		}
+	}
+	.nav{
+		a{
+			cursor: pointer;
+		}
+	}
+	.btn-wrap{
+		padding: 10px;
+	}
+	.header-total{
+		margin-right: 10px;
+	}
+}

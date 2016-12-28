@@ -1,0 +1,71 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+      <div class="pull-left image" style="cursor: pointer;">
+        <img src="assets/admin/images/avatar.png" class="img-circle" alt="User Image">
+      </div>
+      <div class="pull-left info">
+        <p><a>[[pageMethods.authSvc.getProfile().name]]</a></p>
+        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+      </div>
+    </div>
+    <p style="text-align: center;cursor: pointer;" ng-click="pageMethods.authSvc.popChangePass()"> <span class="glyphicon glyphicon-lock" style="color:#b8c7ce;"></span><a> Đổi mật khẩu</a></p>
+    <ul class="sidebar-menu">
+      <li class="header">Menu</li>
+      <!-- <pre>[[menu | json]]</pre> -->
+
+      <!-- =========================Users========================= -->
+      <li ng-if="pageMethods.authSvc.isSuperAdmin() || pageMethods.authSvc.isSaleManager()" ng-class="{'active':pageData.menuType === 'user'}" class="treeview">
+        <a ui-sref="user-sale({page:1})">
+          <i class="fa fa-users text-aqua"></i> <span>Users</span>
+        </a>
+      </li>
+      <!-- =========================END Users========================= -->
+
+      <!-- =========================Sale Contact========================= -->
+      <li ng-if="pageMethods.authSvc.isSuperAdmin() || pageMethods.authSvc.isSale()" ng-class="{'active':pageData.menuType === 'contactregister' || pageData.menuType === 'contactsaleman' || pageData.menuType === 'contactsaleman' || pageData.menuType === 'contactsalemandup' || pageData.menuType === 'contactsalemaneviction' || pageData.menuType === 'contactsalemanevictiondup'}" class="treeview">
+        <a ui-sref="contactsaleman({uid: pageMethods.authSvc.getProfile().uid})">
+          <i class="fa fa-envelope text-aqua"></i> <span>Sale Contact</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu" style="display: block;">
+          <li ng-if="pageMethods.authSvc.isSuperAdmin() || pageMethods.authSvc.isSaleManager()" ng-class="{'active':pageData.menuType === 'salecontacttmp'}">
+            <a ui-sref="salecontacttmp({page:1})"><i class="fa fa-table"></i><span>Danh sách tất cả đăng ký</span></a>
+          </li>
+          <li ng-if="pageMethods.authSvc.isSuperAdmin() || pageMethods.authSvc.isSaleManager()" ng-class="{'active':pageData.menuType === 'contactregister'}">
+            <a ui-sref="contactregister({page:1})"><i class="fa fa-table"></i><span>Danh sách tất cả đăng ký</span></a>
+          </li>
+          <li ng-if="pageMethods.authSvc.isSuperAdmin() || pageMethods.authSvc.isSale()" ng-class="{'active':pageData.menuType === 'contactsaleman'}">
+            <a ui-sref="contactsaleman({uid: pageMethods.authSvc.getProfile().uid})"><i class="fa fa-table"></i><span>Saleman xử lý contact</span></a>
+          </li>
+          <li ng-if="pageMethods.authSvc.isSuperAdmin() || pageMethods.authSvc.isSale()" ng-class="{'active':pageData.menuType === 'contactsalemandup'}">
+            <a ui-sref="contactsalemandup({uid: pageMethods.authSvc.getProfile().uid})"><i class="fa fa-table"></i><span>Saleman Xử lý contact trùng</span><span ng-show="noti.dupCSale" class="pull-right-container"><small class="label pull-right bg-red">[[noti.dupCSale]]</small></span></a>
+          </li>
+          <li ng-if="pageMethods.authSvc.isSuperAdmin() || pageMethods.authSvc.isSaleManager()" ng-class="{'active':pageData.menuType === 'contactsalemaneviction'}">
+            <a ui-sref="contactsalemaneviction()"><i class="fa fa-table"></i><span>Contact thu hồi</span></a>
+          </li>
+          <li ng-if="pageMethods.authSvc.isSuperAdmin() || pageMethods.authSvc.isSaleManager()" ng-class="{'active':pageData.menuType === 'contactsalemanevictiondup'}">
+            <a ui-sref="contactsalemanevictiondup()"><i class="fa fa-table"></i><span>Contact thu hồi trùng</span><span ng-show="noti.dupCEviction" class="pull-right-container"><small class="label pull-right bg-red">[[noti.dupCEviction]]</small></span></a>
+          </li>
+          <li ng-if="pageMethods.authSvc.isSuperAdmin() || pageMethods.authSvc.isSale()" ng-class="{'active':pageData.menuType === 'salecontactsearch'}">
+            <a ui-sref="salecontactsearch()"><i class="fa fa-table"></i><span>Tìm kiếm contact</span></a>
+          </li>
+        </ul>
+      </li>
+      <!-- =========================END Sale Contact========================= -->
+
+      <!-- =========================Thống kê========================= -->
+      <li ng-if="pageMethods.authSvc.isSuperAdmin() || pageMethods.authSvc.isSaleManager()" ng-class="{'active':pageData.menuType === 'statistic'}" class="treeview">
+        <a ui-sref="statistic({page:1})">
+          <i class="fa fa-bar-chart text-aqua"></i> <span>Thống kê</span>
+        </a>
+      </li>
+      <!-- =========================END Thống kê========================= -->
+
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>

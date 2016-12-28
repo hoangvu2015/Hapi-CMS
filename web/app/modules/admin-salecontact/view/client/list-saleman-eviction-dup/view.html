@@ -1,0 +1,164 @@
+ <!--Content Wrapper. Contains page content -->
+ <div id="mod-list-contact-saleman-eviction-dup" class="content-wrapper">
+ 	<!-- Content Header (Page header) -->
+ 	<section class="content-header">
+ 		<h1>
+ 			<span>Sale Contact</span>
+ 			<small>Danh sách contact thu hồi trùng</small>
+ 		</h1>
+ 		<ol class="breadcrumb">
+ 			<li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+ 			<li><a class="active">Contact Saleman</a></li>
+ 		</ol>
+ 	</section>
+ 	<!-- Main content -->
+ 	<section class="content">
+ 		<div class="row">
+ 			<div class="col-xs-12">
+ 				<div class="box">
+ 					<div class="box-header">
+ 						<h3 class="box-title">Danh sách Contact Saleman thu hồi trùng</h3>
+ 					</div>
+ 					<!-- /.box-header -->
+ 					<div class="box-body">
+ 						<div class="form-inline">
+ 							<div class="form-group form-group-item pull-right">
+ 								<br/>
+								<!-- <a class="btn btn-primary btn-flat" ui-sref="salecontact-edit({id:null, _sale_usermember: pageMethods.authSvc.getProfile().uid})">
+									<i class="glyphicon glyphicon-plus"></i>
+									<span>Thêm mới</span>
+								</a> -->
+								<a ng-if="pageMethods.authSvc.isSuperAdmin() || pageMethods.authSvc.isSaleManager()" class="btn bg-navy btn-flat margin" ng-click="mvCSMED.popupAssignToSaleman(mvCSMED.checkboxes.items,'multiple')">
+									<i class="glyphicon glyphicon-user"></i>
+									<span>Bàn giao Saleman</span>
+								</a>
+							</div>
+							<!-- ===================================FILTER=================================== -->
+							<div class="pull-left">
+								<div class="form-inline">
+									<a ng-click="mvCSMED.linkFilter('filterDay','day')" ng-class="{'active':mvCSMED.queryParams.filterDay === 'day'}" class="ft-link">Hôm nay ([[mvCSMED.totalFilters.day || 0]])</a> 
+									<a ng-click="mvCSMED.linkFilter('filterDay','isoWeek')" ng-class="{'active':mvCSMED.queryParams.filterDay === 'isoWeek'}" class="ft-link">Tuần này ([[mvCSMED.totalFilters.isoWeek || 0]])</a> 
+									<a ng-click="mvCSMED.linkFilter('filterDay','month')" ng-class="{'active':mvCSMED.queryParams.filterDay === 'month'}" class="ft-link ft-last">Tháng này ([[mvCSMED.totalFilters.month || 0]])</a> 
+									<div class="input-group col-md-4">
+										<input type="text" class="form-control" id="reservationtime">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
+										</div>
+									</div>
+								</div>
+								<br/>
+
+								<div class="form-inline">
+									<a ng-click="mvCSMED.linkFilter('is_finish',false)" class="ft-link" ng-class="{'active': mvCSMED.queryParams.is_finish == 'false'}">Chưa bàn giao ([[mvCSMED.totalFilters.not_is_finish || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('is_finish',true)" class="ft-link ft-last" ng-class="{'active': mvCSMED.queryParams.is_finish == 'true'}">Đã bàn giao qua CC ([[mvCSMED.totalFilters.is_finish || 0]])</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+									<a ng-click="mvCSMED.linkFilter('type','work')" class="ft-link" ng-class="{'active': mvCSMED.queryParams.type === 'work'}">Work ([[mvCSMED.totalFilters.work || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('type','kid')" class="ft-link" ng-class="{'active': mvCSMED.queryParams.type === 'kid'}">Kid ([[mvCSMED.totalFilters.kid || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('type','null')" class="ft-link ft-last" ng-class="{'active': mvCSMED.queryParams.type === 'null'}">Chưa phân loại ([[mvCSMED.totalFilters.undefined || 0]])</a>
+								</div>
+								<br/>
+
+								<div class="form-inline">
+									<a ng-click="mvCSMED.filterReset()" class="ft-link">Tất cả ([[mvCSMED.totalFilters.all || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('is_recall_schedule', true)" class="ft-link" ng-class="{'active': mvCSMED.queryParams.is_recall_schedule === 'true'}">Hẹn gọi lại ([[mvCSMED.totalFilters.is_recall_schedule || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('schedule_inteview', true)" class="ft-link" ng-class="{'active': mvCSMED.queryParams.schedule_inteview === 'true'}">Lịch hẹn test ([[mvCSMED.totalFilters.schedule_inteview || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('call_level','new')" class="ft-link" ng-class="{'active': mvCSMED.queryParams.call_level === 'new'}">Mới nhận ([[mvCSMED.totalFilters.call_level_new || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('call_level',1)" class="ft-link" ng-class="{'active': mvCSMED.queryParams.call_level === '1'}">L1 ([[mvCSMED.totalFilters.call_level_1 || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('call_level',2)" class="ft-link" ng-class="{'active': mvCSMED.queryParams.call_level === '2'}">L2 ([[mvCSMED.totalFilters.call_level_2 || 0]])</a>
+
+									<a ng-click="mvCSMED.linkFilter('call_level',3)" class="ft-link" ng-class="{'active': mvCSMED.queryParams.call_level === '3'}">L3 ([[mvCSMED.totalFilters.call_level_3 || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('call_level',4)" class="ft-link" ng-class="{'active': mvCSMED.queryParams.call_level === '4'}">L4 ([[mvCSMED.totalFilters.call_level_4 || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('call_level',5)" class="ft-link" ng-class="{'active': mvCSMED.queryParams.call_level === '5'}">L5 ([[mvCSMED.totalFilters.call_level_5 || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('call_level',6)" class="ft-link" ng-class="{'active': mvCSMED.queryParams.call_level === '6'}">L6 ([[mvCSMED.totalFilters.call_level_6 || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('call_level',7)" class="ft-link" ng-class="{'active': mvCSMED.queryParams.call_level === '7'}">L7 ([[mvCSMED.totalFilters.call_level_7 || 0]])</a>
+									<a ng-click="mvCSMED.linkFilter('call_level',8)" class="ft-link ft-last" ng-class="{'active': mvCSMED.queryParams.call_level === '8'}">L8 ([[mvCSMED.totalFilters.call_level_8 || 0]])</a>
+								</div>
+								<br/>
+								
+								<div class="clearfix"></div>	
+								<div class="form-inline">
+									<input ng-model="mvCSMED.queryParams.keyword" type="text" class="form-control" placeholder="Search name, phone, email">
+									&nbsp&nbsp&nbsp
+
+									<select id="ddl-level" class="form-control" ng-model="mvCSMED.queryParams.call_status" ng-change="mvCSMED.filter()" ng-options=" item.value as (item.name) group by item.group for item in mvCSMED.constLevel">
+										<option value=''>-- Chọn trạng thái cuộc gọi --</option>
+									</select>
+									&nbsp&nbsp&nbsp
+
+									<select id="ddlCareStatus" class="form-control" ng-model="mvCSMED.queryParams.care_status" ng-change="mvCSMED.filter()" ng-options="item.value as item.name for item in mvCSMED.constCare">
+										<option value=''>-- Chọn trạng thái chăm sóc --</option>
+									</select>
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+									
+									<button ng-click="mvCSMED.filter()" class="btn btn-flat btn-success">Filter</button>
+									<button ng-click="mvCSMED.filterReset()" class="btn btn-flat btn-warning">Reset</button>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="pull-right">Record: [[mvCSMED.totalFilters.all]]</div>
+						</div>
+						<div class="clearfix"></div>
+						<br/>
+						<!-- ===================================END FILTER=================================== -->
+
+
+						<!-- ===================================TABLE=================================== -->
+						<div ng-show="mvCSMED.loading" style="text-align: center;"><img src="/assets/loading.svg" alt=""></div>
+						<script type="text/ng-template" id="headerCheckbox.html">
+							<label for="all-check">Tất cả</label>
+							<input id="all-check" i-check checkbox-class="icheckbox_flat-green" type="checkbox" ng-model="mvCSMED.checkboxes.checked" class="select-all" value="" />
+						</script>
+						<table ng-show="!mvCSMED.loading" ng-table="mvCSMED.table" class="table table-condensed table-bordered table-striped">
+							<tr ng-repeat="item in $data">
+								<td style="text-align: center;" header="'headerCheckbox.html'"><input i-check checkbox-class="icheckbox_flat-green" type="checkbox" ng-model="mvCSMED.checkboxes.items[item._id]" /></td>
+								<td data-title="'STT'">
+									<div class="col col-num" ng-bind="((mvCSMED.queryParams.page - 1) * mvCSMED.queryParams.limit) + $index + 1"></div>
+								</td>
+								<td data-title="'Liên hệ'">
+									<span ng-bind="item.level_1.name"></span><br>
+									<span ng-bind="item.level_1.email"></span><br>
+									<span ng-bind="item.level_1.phone"></span><br>
+									<span ng-bind-template="Skype: [[::item.level_1.skype]]"></span><br>
+								</td>
+								<td data-title="'Thông tin'">
+									<span ng-bind-template="Tuổi: [[::item.level_1.age]]"></span><br>
+									<span ng-bind-template="Nghề nghiệp: [[::item.level_1.career]]"></span><br>
+									<span ng-bind-template="Thông tin học: [[::item.level_1.learn_info]]"></span><br>
+								</td>
+								
+								<td data-title="'Thông tin cuộc gọi'">
+									<span ng-bind="item.call_info.call_note">Đã gọi lần 2</span><br>
+									<span>[[mvCSMED.findObject('value',item.call_info.call_status,mvCSMED.constLevel).name]]</span><br>
+									<span ng-if="item.call_info.recall_schedule" ng-bind-template="Gọi lại: [[::item.call_info.recall_schedule | bzFormatDate: 'h:mm:ss DD/MM/YYYY']]"></span><br>
+								</td>
+								<td data-title="'Trạng thái chăm sóc'">
+									<span>[[mvCSMED.findObject('value',item.call_info.care_status,mvCSMED.constCare).name]]</span><br>
+								</td>
+								<td data-title="'Lịch test'">
+									<span ng-if="item.level_3.schedule_inteview">Ngày test: [[item.level_3.schedule_inteview | bzFormatDate: 'h:mm:ss DD/MM/YYYY']]</span><br>
+								</td>
+								<td data-title="'Level'">
+									<span ng-if="item.call_info.call_level">Level [[item.call_info.call_level]]</span>
+								</td>
+								<td data-title="'Ngày nhận contact'">
+									<span ng-if="item.date_assign_saleman" ng-bind="::item.date_assign_saleman | bzFormatDate: 'h:M:S A DD/MM/YYYY'"></span>
+								</td>
+								<td data-title="'Đã bàn giao qua CMD'">
+									<span ng-if="item.is_finish && item.date_assign_cmd" ng-bind="::item.date_assign_cmd | bzFormatDate: 'h:m:s DD/MM/YYYY'"></span>
+								</td>
+							</tr>
+						</table>
+						<!-- ===================================END TABLE=================================== -->
+
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+			<!-- /.col -->
+		</div>
+		<!-- /.row -->
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper

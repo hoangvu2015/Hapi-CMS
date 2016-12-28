@@ -1,0 +1,7 @@
+node_modules
+public/lib
+var/*.log
+*.log
+.vscode
+.idea
+dump.rdb

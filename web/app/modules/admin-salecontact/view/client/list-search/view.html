@@ -1,0 +1,82 @@
+Content Wrapper. Contains page content -->
+<div id="mod-salecontact-list-search" class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			<span>Search Contact</span>
+			<small>Danh sách Search Contact</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+			<li><a class="active">Search Contact</a></li>
+		</ol>
+	</section>
+	<!-- Main content -->
+	<section class="content">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box">
+					<div class="box-header">
+						<h3 class="box-title">Danh sách Search Contact</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<div class="form-inline">
+							<div class="pull-left">
+								<div class="form-inline">
+									<input style="width: 200px;" ng-model="vmSCT.queryParams.keyword" type="text" class="form-control" placeholder="Search name, phone, email">
+									&nbsp&nbsp&nbsp
+									
+									<button ng-disabled="vmSCT.loading" ng-click="vmSCT.filter()" class="btn btn-flat btn-success">Check</button>
+									<!-- <button ng-click="vmSCT.filterReset()" class="btn btn-flat btn-warning">Reset</button> -->
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div ng-show="vmSCT.loading" style="text-align: center;"><img src="/assets/loading.svg" alt=""></div>
+
+						<table ng-show="!vmSCT.loading" ng-table="vmSCT.table" class="table table-condensed table-bordered table-striped">
+							<tr ng-repeat="item in $data">
+								<td data-title="'STT'">
+									<div class="col col-num" ng-bind="((vmSCT.queryParams.page - 1) * vmSCT.queryParams.limit) + $index + 1"></div>
+								</td>
+								<td data-title="'Liên hệ'">
+									<span ng-bind="item.level_1.name"></span><br>
+									<span ng-bind="item.level_1.email"></span><br>
+									<span ng-bind="item.level_1.phone"></span><br>
+									<span ng-bind-template="Skype: [[::item.level_1.skype]]"></span><br>
+									<a ui-sref="salecontact-edit({id:item._id})" ng-bind="item.name"></a>
+								</td>
+								<td data-title="'Thông tin'">
+									<span ng-bind-template="Tuổi: [[::item.level_1.age]]"></span><br>
+									<span ng-bind-template="Nghề nghiệp: [[::item.level_1.career]]"></span><br>
+									<span>Thông tin học: </span>
+									<span ng-bind-html="[[item.level_1.learn_info]]"></span><br>
+								</td>
+								<td data-title="'Phân loại'">
+									<span class="label" ng-class="{'label-success':item.level_2.type === 'kid', 'label-primary':item.level_2.type === 'work', 'label-default':!item.level_2.type}" ng-bind="::!item.level_2.type ? 'Chưa xác định': item.level_2.type"></span>
+								</td>
+								<td data-title="'Ngày đăng ký'">
+									<span ng-bind="::item.createdAt | bzFormatDate: 'h:mm:ss DD/MM/YYYY'"></span>
+								</td>
+								<td data-title="'Thu hồi'">
+									<span class="label" ng-class="{'label-success':item.eviction, 'label-default':!item.eviction}" ng-bind="::item.eviction ? 'Đã thu hồi': 'Chưa thu hồi'"></span>
+								</td>
+								<td data-title="'Saleman Bàn giao'">
+									<span ng-if="item._sale_usermember" ng-bind="::item._sale_usermember.name"></span>
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+			<!-- /.col -->
+		</div>
+		<!-- /.row -->
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper

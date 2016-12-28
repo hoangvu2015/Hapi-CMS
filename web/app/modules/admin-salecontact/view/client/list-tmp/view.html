@@ -1,0 +1,179 @@
+<!--Content Wrapper. Contains page content -->
+<div id="mod-salecontact-list-tmp" class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			<span>Sale Contact</span>
+			<small>Danh sách</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+			<li><a class="active">Sale Contact</a></li>
+		</ol>
+	</section>
+	<!-- Main content -->
+	<section class="content">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box">
+					<div class="box-header">
+						<h3 class="box-title">Danh sách Contact</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+
+						<!-- FORM XXXXXXXXXXXXXXXXXXXXXXXX -->
+						<div class="box box-default">
+							<div class="box-header with-border">
+								<h3 class="box-title">[[userEdit.queryParams.id ? 'Cập nhật' : 'Thêm mới']]</h3>
+
+								<div class="box-tools pull-right">
+									<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+									<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+								</div>
+							</div>
+							<!-- /.box-header -->
+							<div class="box-body">
+								<form novalidate id="frmContactTmp" name="frmContactTmp" ng-submit="SCTMP.save(frmContactTmp.$valid)">
+									<div class="box-body">
+										<div class="row">
+											<div class="col-md-4">
+												<!-- Tên -->
+												<div class="form-group">
+													<label class="control-label" for="txtName">Tên <span class="required">*</span></label>
+													<input id="txtName" name="txtName" class="form-control" type="text" ng-model="SCTMP.formData.name" ng-pattern="/[a-zA-Z0-9]/" required />
+													<div class="messages-error" ng-messages="frmContactTmp.txtName.$error" ng-if="SCTMP.submitted">
+														<div ng-message="required">Bạn chưa nhập tên.</div>
+														<div ng-message="pattern">Tên không được chứa các ký tự đặc biệt.</div>
+													</div>
+												</div>
+												<!-- Email -->
+												<div class="form-group">
+													<label class="control-label" for="txtEmail">Email</label>
+
+													<input class="form-control" id="txtEmail" name="txtEmail" type="text"  ng-model="SCTMP.formData.email" ng-pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" />
+
+													<div class="messages-error" ng-messages="frmContactTmp.txtEmail.$error" ng-if="SCTMP.submitted">
+														<div ng-message="required">Bạn chưa nhập email.</div>
+														<div ng-message="pattern">Email không hợp lệ.</div>
+													</div>
+												</div>
+												<!-- Skype -->
+												<div class="form-group">
+													<label class="control-label" for="txtSkype">Skype</label>
+													<input id="txtSkype" name="txtSkype" class="form-control" type="text" ng-model="SCTMP.formData.skype" />
+												</div>
+												
+											</div>
+											<div class="col-md-4">
+												<!-- Điện thoại -->
+												<div class="form-group">
+													<label class="control-label" for="txtPhone">Điện thoại <span class="required">*</span></label>
+													<input id="txtPhone" name="txtPhone" class="form-control" type="text" ng-model="SCTMP.formData.phone" ng-pattern="/^[0][0-9]*$/" required />
+													<div class="messages-error" ng-messages="frmContactTmp.txtPhone.$error" ng-if="SCTMP.submitted" ng-messages-multiple>
+														<div ng-message="required">Bạn chưa nhập số điện thoại.</div>
+														<div ng-message="pattern">Số điện thoại không hợp lệ, nhập số 0 trước.</div>
+													</div>
+												</div>
+												<!-- Độ tuổi -->
+												<div class="form-group">
+													<label class="control-label" for="ddlAge">Độ tuổi</label>
+													<select id="ddlAge" name="ddlAge" class="form-control" ng-model="SCTMP.formData.age">
+														<option value="">Chọn độ tuổi</option>
+														<option value="Dưới 6 tuổi">Dưới 6 tuổi</option>
+														<option value="Từ 6 - 13 tuổi">Từ 6 - 13 tuổi</option>
+														<option value="Từ 13 - 18 tuổi">Từ 13 - 18 tuổi</option>
+														<option value="Từ 18 - 24 tuổi">Từ 18 - 24 tuổi</option>
+														<option value="Trên 24 tuổi">Trên 24 tuổi</option>
+													</select>
+												</div>
+												<!-- Đối tượng -->
+												<div class="form-group">
+													<label class="control-label">Đối tượng</label>
+													<div>
+														<label for="optUndefined" role="radio">
+															<input i-check id="optUndefined" name="optType" value="" ng-model="SCTMP.formData.type" type="radio" class="minimal">
+															<i></i>
+															<span>Chưa xác định</span>
+														</label>
+														<span>&nbsp;&nbsp;</span>
+														<label for="optKid" role="radio">
+															<input i-check id="optKid" name="optType" value="kid" ng-model="SCTMP.formData.type" type="radio" class="minimal">
+															<i></i>
+															<span>Kid</span>
+														</label>
+														<span>&nbsp;&nbsp;</span>
+														<label for="optWord" role="radio">
+															<input i-check id="optWord" name="optType" value="work" ng-model="SCTMP.formData.type" type="radio" class="minimal">
+															<i></i>
+															<span>Work</span>
+														</label>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="box-footer">
+										<button bz-submit type="submit" class="btn btn-success btn-flat btn-submit" ng-class="{'loading-btn': SCTMP.lockForm}" ng-disabled="SCTMP.lockForm">
+											<i class="glyphicon glyphicon-floppy-disk" ng-if="!SCTMP.lockForm"></i>
+											<span>Lưu</span>
+										</button>
+									</div>
+									<!-- <pre>[[SCTMP.formData | json]]</pre> -->
+								</form>
+							</div>
+							<!-- /.box-body -->
+						</div>
+						<!-- /.box -->
+						<!--END FORM XXXXXXXXXXXXXXXXXXXXXXXX -->
+
+						<div class="form-inline">
+							<div class="pull-left">
+								<div class="form-inline">
+									<input style="width: 200px;" ng-model="SCTMP.queryParams.keyword" type="text" class="form-control" placeholder="Search name, phone, email">
+									<button ng-click="SCTMP.filter()" class="btn btn-flat btn-success">Filter</button>
+									<button ng-click="SCTMP.filterReset()" class="btn btn-flat btn-warning">Reset</button>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div ng-show="SCTMP.loading" style="text-align: center;"><img src="/assets/loading.svg" alt=""></div>
+
+						<table ng-show="!SCTMP.loading" ng-table="SCTMP.table" class="table table-condensed table-bordered table-striped">
+							<tr ng-repeat="item in $data">
+								<td data-title="'STT'">
+									<div class="col col-num" ng-bind="((SCTMP.queryParams.page - 1) * SCTMP.queryParams.limit) + $index + 1"></div>
+								</td>
+								<td data-title="'Liên hệ'">
+									<span ng-bind="item.name"></span><br>
+									<span ng-bind="item.email"></span><br>
+									<span ng-bind="item.phone"></span><br>
+									<span ng-bind-template="Skype: [[::item.skype]]"></span><br>
+								</td>
+								<td data-title="'Thông tin'">
+									<span ng-bind-template="Tuổi: [[::item.age]]"></span><br>
+									<span ng-bind-template="Nghề nghiệp: [[::item.career]]"></span><br>
+									<span>Thông tin học: </span>
+									<span ng-bind-html="[[item.learn_info]]"></span><br>
+								</td>
+								<td data-title="'Phân loại'">
+									<span class="label" ng-class="{'label-success':item.type === 'kid', 'label-primary':item.type === 'work', 'label-default':!item.type}" ng-bind="::!item.type ? 'Chưa xác định': item.type"></span>
+								</td>
+								<td data-title="'Ngày đăng ký'">
+									<span ng-bind="::item.createdAt | bzFormatDate: 'h:mm A DD/MM/YYYY'"></span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+			<!-- /.col -->
+		</div>
+		<!-- /.row -->
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper-->

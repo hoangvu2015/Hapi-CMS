@@ -1,0 +1,29 @@
+<b>1/ Thông tin học viên</b><br/>
+
+<p>Learner ID: {{olduser_id}}</p>
+<p>Họ Tên: {{level_1.name}}</p>
+<p>Skype: {{level_1.skype}}</p>
+<p>SĐT: {{level_1.phone}}</p>
+<p>Email: {{level_1.email}}</p>
+<p>Ngày Sinh: {{level_1.dob}}</p>
+<p>Độ tuổi: {{level_1.age}}</p>
+<p>Nghề nghiệp: {{level_1.career}}</p>
+<p>Tỉnh Thành: {{level_1.province}}</p>
+<br/><br/>
+
+<b>2/ Thông tin khóa học</b>
+<br/><br/>
+
+<p>Trình độ học viên:  {{level_2.learner_level}}</p>
+<p>Thời gian học:  {{level_8.learn_begin_at}}</p>
+<p>Yêu cầu giáo viên:  {{level_8.teacher_request}}</p>
+<p>Học phí đã đóng:  {{level_8.money_finish}}</p>
+<br/><br/>
+
+<b>3/ Ghi chú bàn giao:</b><br/>
+<p>{{note_cc}}</p>
+
+{{#if level_5.test_file}}
+<b>File kết quả test</b>
+    <a href="crm2.antoree.com/files/pdf_test/{{level_5.test_file}}">{{level_5.test_file}}</a>
+{{/if}}

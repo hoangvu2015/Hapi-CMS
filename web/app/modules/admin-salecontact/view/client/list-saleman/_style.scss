@@ -1,0 +1,19 @@
+#mod-list-contact-saleman{
+	.active{
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	.ft-link{
+		cursor: pointer;
+		color: #3c8dbc;
+		font-size: 15px;
+		padding: 0 5px;
+		border-right: 1px solid black;
+	}
+	.ft-last{
+		border: none;
+	}
+	#ddl-level{
+		max-width: 250px;
+	}
+}

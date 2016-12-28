@@ -1,0 +1,9 @@
+{{#if_eq settings.env "production"}}
+<script src="dist/admin/scripts/vendor.min.js"></script>
+<script src="dist/admin/scripts/main.min.js"></script>
+{{else}}
+
+<script src="vendor.min.js"></script>
+
+<script src="main.min.js"></script>
+{{/if_eq}}

@@ -1,0 +1,100 @@
+<!--Content Wrapper. Contains page content -->
+<div id="mod-user-list" class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			Thành viên
+			<small>Danh sách thành viên</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+			<li><a class="active">Thành viên</a></li>
+		</ol>
+	</section>
+	<!-- Main content -->
+	<section class="content">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box">
+					<div class="box-header">
+						<h3 class="box-title">Danh sách thành viên</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<div class="form-inline pull-right">
+							<div class="form-group form-group-item">
+								<a class="btn btn-primary btn-sm btn-flat" ui-sref="user-edit({module: 'sale',id:null})">
+									<i class="glyphicon glyphicon-plus"></i>
+									<span>Thêm</span>
+								</a>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div ng-show="vmUSale.loading" style="text-align: center;"><img src="/assets/loading.svg" alt=""></div>
+						<table ng-show="!vmUSale.loading" ng-table="vmUSale.table" class="table table-condensed table-bordered table-striped">
+							<tr ng-repeat="item in $data">
+								<td data-title="'STT'">
+									<div class="col col-num" ng-bind="((vmUSale.queryParams.page - 1) * vmUSale.queryParams.limit) + $index + 1"></div>
+								</td>
+								<td data-title="'Tên'">[[item.name]]</td>
+								<td data-title="'Email'">[[item.email]]</td>
+								<td data-title="'Vai Trò'">
+								<span ng-repeat="(key, value) in item.roles">
+								[[$last ? value : value+', ']] 
+								</span>
+								</td>
+								<td data-title="'Group'">
+								<span ng-repeat="(key, value) in item.saleman.types">
+								[[$last ? value : value+', ']] 
+								</span>
+								</td>
+								<td data-title="'Ngày đăng ký'">
+									<span ng-bind="item.createdAt | bzFormatDate:'h:m:s DD/MM/YYYY'"></span>
+								</td>
+								<td data-title="'Active User'">
+								<span class="[[item.status === true ? 'label label-success': 'label label-default']]">[[item.status === true ? 'Active': 'Inactive']]</span>
+									<!-- <label role="switcher">
+										<input i-check type="checkbox" ng-model="item.status" ng-true-value="true" ng-false-value="false" ng-change="vmUSale.active(item.id, item.status)">
+										<i></i>
+										<span></span>
+									</label> -->
+								</td>
+								<td data-title="'Active SaleMan'">
+									<span class="[[item.saleman.active === true ? 'label label-success': 'label label-default']]">[[item.saleman.active === true ? 'Active': 'Inactive']]</span>
+									<!-- <label role="switcher">
+										<input i-check type="checkbox" ng-model="item.saleman.active" ng-true-value="true" ng-false-value="false" ng-change="vmUSale.active(item.id, item.status)">
+										<i></i>
+										<span></span>
+									</label> -->
+								</td>
+								<td data-title="'Sale Manager'">
+								<span class="[[item.saleman.manager === true ? 'label label-success': 'label label-default']]">[[item.saleman.manager === true ? 'Active': 'Inactive']]</span>
+									<!-- <label role="switcher">
+										<input i-check type="checkbox" ng-model="item.saleman.manager" ng-true-value="true" ng-false-value="false" ng-change="vmUSale.active(item.id, item.status)">
+										<i></i>
+										<span></span>
+									</label> -->
+								</td>
+								<td data-title="'Action'">
+									<a class="btn-edit" ui-sref="user-edit({module: 'sale', id:item._id})">
+										<i class="fa fa-pencil"></i>
+									</a>
+									<a class="btn-delete" ng-click="vmUSale.remove(item._id)">
+										<i class="fa fa-close"></i>
+									</a>
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+			<!-- /.col -->
+		</div>
+		<!-- /.row -->
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper-->

@@ -1,0 +1,1238 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"retu",
+				"result"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"su",
+				"submit\t.submit()"
+			],
+			[
+				"sess",
+				"sessionId"
+			],
+			[
+				"fade",
+				"fadeOut\t.fadeOut()"
+			],
+			[
+				"max",
+				"maxVal"
+			],
+			[
+				"accout",
+				"accountSvc"
+			],
+			[
+				"fnd",
+				"find\t.find()"
+			],
+			[
+				"wat",
+				"watchCollection"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"mode",
+				"modelAttrs"
+			],
+			[
+				"col",
+				"col-check"
+			],
+			[
+				"page",
+				"pageState"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"cu",
+				"cur:m\tcursor:move"
+			],
+			[
+				"fase",
+				"false"
+			],
+			[
+				"min",
+				"minWords"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"test",
+				"testlist"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"hot",
+				"btnHOT"
+			],
+			[
+				"not",
+				"notify"
+			],
+			[
+				"defer",
+				"defered"
+			],
+			[
+				"clear",
+				"clearFileInput"
+			],
+			[
+				"qser",
+				"qservicefull\tqservicefull"
+			],
+			[
+				"qcon",
+				"qcontrollerfull\tqcontrollerfull"
+			],
+			[
+				"resp",
+				"response"
+			],
+			[
+				"cline",
+				"clientId"
+			],
+			[
+				"ap",
+				"apiKey"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"bef",
+				"beforeOpen"
+			],
+			[
+				"be",
+				"beforeOpen"
+			],
+			[
+				"bz",
+				"bzClosePopup"
+			],
+			[
+				"base",
+				"baseUrlDb"
+			],
+			[
+				"conf",
+				"configs"
+			],
+			[
+				"mag",
+				"margin"
+			],
+			[
+				"file",
+				"fileManagerSvc"
+			],
+			[
+				"js",
+				"helperJs"
+			],
+			[
+				"Acc",
+				"accountSvc"
+			],
+			[
+				"text",
+				"textareas"
+			],
+			[
+				"ng-bind",
+				"ng-bind-html\tAngularJS"
+			],
+			[
+				"localos",
+				"localhost"
+			],
+			[
+				"me",
+				"method"
+			],
+			[
+				"exten",
+				"extendObject"
+			],
+			[
+				"load",
+				"loading"
+			],
+			[
+				"va",
+				"value\tAngularJS"
+			],
+			[
+				"jquery",
+				"jquery-ui"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"co",
+				"columnWidth"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"bot",
+				"border-top"
+			],
+			[
+				"pre",
+				"preloader"
+			],
+			[
+				"pro",
+				"promise\t.promise()"
+			],
+			[
+				"tpl",
+				"tplData"
+			],
+			[
+				"$scope",
+				"$rootScope\tAngularJS"
+			],
+			[
+				"langu",
+				"languageJs"
+			],
+			[
+				"over",
+				"overflow-x"
+			],
+			[
+				"bg",
+				"bg\tbackground"
+			],
+			[
+				"read",
+				"ready\t$(document).ready"
+			],
+			[
+				"prot",
+				"prototype"
+			],
+			[
+				"$root",
+				"$rootScope\tAngularJS"
+			],
+			[
+				"settin",
+				"settingJs"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"my",
+				"myState"
+			],
+			[
+				"ro",
+				"rootScope"
+			],
+			[
+				"mo",
+				"mobile_code"
+			],
+			[
+				"is",
+				"isRegFB"
+			],
+			[
+				"us",
+				"user_token"
+			],
+			[
+				"log",
+				"keyLoggedIn"
+			],
+			[
+				"isun",
+				"isUndefinedNullEmpty"
+			],
+			[
+				"qd",
+				"qdirectivefull\tqdirectivefull"
+			],
+			[
+				"$inter",
+				"$interval\tAngularJS"
+			],
+			[
+				"inner",
+				"innerHeight\t.innerHeight()"
+			],
+			[
+				"add",
+				"addEventListener"
+			],
+			[
+				"control",
+				"controlCv"
+			],
+			[
+				"leafIn",
+				"leafInstance2"
+			],
+			[
+				"leafIns",
+				"leafInstance1"
+			],
+			[
+				"scal",
+				"scaleY"
+			],
+			[
+				"contr",
+				"controlCv"
+			],
+			[
+				"contac",
+				"contactSvc"
+			],
+			[
+				"Con",
+				"contactSvc"
+			],
+			[
+				"formd",
+				"formdata"
+			],
+			[
+				"app",
+				"appId"
+			],
+			[
+				"play",
+				"PLAY"
+			],
+			[
+				"conta",
+				"constant\tAngularJS"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"ng-",
+				"ng-bind\tAngularJS"
+			],
+			[
+				"about",
+				"aboutCache"
+			],
+			[
+				"padding-",
+				"padding-right"
+			],
+			[
+				"fsi",
+				"font-size"
+			],
+			[
+				"minute",
+				"minute-box"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"qp",
+				"qposition\tqposition"
+			],
+			[
+				"text-",
+				"text-color2"
+			],
+			[
+				"conte",
+				"popup-content"
+			],
+			[
+				"backg",
+				"background"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"i",
+				"iElement"
+			],
+			[
+				"colorS",
+				"colorSelected"
+			],
+			[
+				"tin",
+				"tint\tdirective.js"
+			],
+			[
+				"defautVa",
+				"defaultVal\tplugin.js"
+			],
+			[
+				"de",
+				"disabled\tAttr"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"contact",
+				"contactCtrl($scope)\tcontroller.js"
+			],
+			[
+				"val",
+				"value\tAngular.js"
+			],
+			[
+				"ge",
+				"get\t.get()"
+			],
+			[
+				"eff",
+				"effSpeed"
+			],
+			[
+				"backgrou",
+				"background-size"
+			],
+			[
+				"res",
+				"resize\t.resize()"
+			],
+			[
+				"pae",
+				"parseInt"
+			],
+			[
+				"Max",
+				"MAX_VALUE"
+			],
+			[
+				"if",
+				"iify\tiify"
+			],
+			[
+				"close",
+				"closeOnBg"
+			],
+			[
+				"Cav",
+				"canvas"
+			],
+			[
+				"Fabric",
+				"fabric"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"jRes",
+				"jRespond"
+			],
+			[
+				"article",
+				"articleDirection\tglobalController.js"
+			],
+			[
+				"delayedCall",
+				"delayedCall(delay, callback, params, scope, useFrames)\ttweenmax.js"
+			],
+			[
+				"ba",
+				"background-position"
+			],
+			[
+				"mpa",
+				"mapVietNam"
+			],
+			[
+				"magin",
+				"margin-bottom"
+			],
+			[
+				"off",
+				"offset\t.offset()"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"v",
+				"Video"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "web/app/modules/admin-log/index.js",
+			"settings":
+			{
+				"buffer_size": 285,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/app/modules/admin-log/controller/log.controller.js",
+			"settings":
+			{
+				"buffer_size": 1063,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 367.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: is",
+				"Package Control: Install Package"
+			],
+			[
+				"for",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"Package Controlins",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Convert Case: Lower Case"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"Snippet: thi",
+				"Snippet: thi"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Biz/antoree-crm",
+		"/Biz/antoree-crm/web",
+		"/Biz/antoree-crm/web/app",
+		"/Biz/antoree-crm/web/app/modules",
+		"/Biz/antoree-crm/web/app/modules/admin-log",
+		"/Biz/antoree-crm/web/app/modules/admin-log/controller",
+		"/Biz/antoree-crm/web/app/modules/admin-log/model",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/controller",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/model"
+	],
+	"file_history":
+	[
+		"/Biz/antoree-crm/web/app/modules/admin-log/model/log.model.js",
+		"/Biz/antoree-crm/web/app/modules/admin-log/index.js",
+		"/Biz/antoree-crm/web/app/modules/admin-name/controller/name.controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-name/model/name.model.js",
+		"/Biz/antoree-crm/web/app/modules/admin-name/index.js",
+		"/Biz/antoree-crm/web/app/modules/admin-history/controller/history.controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-history/index.js",
+		"/Biz/antoree-crm/web/app/modules/admin-history/model/history.model.js",
+		"/Biz/antoree-crm/web/app/modules/admin-post/model/history.model.js",
+		"/Biz/antoree-crm/web/app/modules/admin-user/view/client/service.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/config.js",
+		"/Biz/antoree-crm/web/app/modules/admin-statistic/view/client/config.js",
+		"/Biz/antoree-crm/web/app/modules/admin-dashboard/view/client/config.js",
+		"/Biz/antoree-crm/web/app/modules/admin-user/view/client/config.js",
+		"/Biz/antoree-crm/web/app/modules/admin-user/view/client/edit/view.html",
+		"/Biz/antoree-crm/web/app/modules/api-user/model/user.model.js",
+		"/Biz/antoree-crm/web/app/modules/api-user/controller/auth.controller.js",
+		"/Biz/antoree-crm/web/public/assets/scripts/utils/prototypes.js",
+		"/Biz/antoree-crm/web/app/views/layouts/admin/layout-admin.html",
+		"/Biz/antoree-crm/web/app/modules/admin-core/view/client/bootstrap.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/define.js",
+		"/Biz/antoree-crm/web/app/views/layouts/admin/partials/footer.html",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/list/controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-core/view/client/filter.js",
+		"/Biz/antoree-crm/web/app/modules/admin-core/view/client/profile.html",
+		"/Biz/antoree-crm/web/app/modules/admin-core/view/client/profile-sidebar.html",
+		"/Biz/antoree-crm/web/app/modules/admin-core/index.js",
+		"/Biz/antoree-crm/web/app/modules/admin-core/view/client/define.js",
+		"/Biz/antoree-crm/web/app/modules/admin-core/view/client/service.js",
+		"/Biz/antoree-crm/web/app/modules/admin-user/view/client/list/controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-user/view/client/define.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/list/view.html",
+		"/Biz/antoree-crm/web/app/modules/admin-auth/controller/auth.controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/list/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/process/controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/service.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/list/router.js",
+		"/Biz/antoree-crm/web/app/modules/admin-dashboard/controller/dashboard.controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-auth/view/client/controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/controller/salecontact.controller.js",
+		"/Biz/antoree-crm/web/app/styles/component/_grid.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/model/salecontact.model.js",
+		"/Biz/antoree-crm/web/app/lib/auth.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/edit/controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-dashboard/view/client/controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/process/view.html",
+		"/Biz/antoree-crm/web/app/modules/admin-core/view/client/directive.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/edit/view.html",
+		"/Biz/antoree-crm/web/app/styles/component/_reskin.scss",
+		"/Biz/antoree-crm/web/bower.json",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/index.js",
+		"/Biz/antoree-crm/web/app/styles/component/_toolbar.scss",
+		"/Biz/antoree-crm/web/app/styles/tools/_helpers.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/registration-history/controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/registration-history/view.html",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/registration-history/_style.scss",
+		"/Biz/antoree-crm/web/app/styles/main.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-statistic/view/client/list/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-statistic/view/client/list/router.js",
+		"/Biz/antoree-crm/web/app/modules/admin-statistic/view/client/list/controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-statistic/view/client/list/view.html",
+		"/Biz/antoree-crm/web/app/modules/admin-statistic/view/client/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-statistic/index.js",
+		"/Biz/antoree-crm/web/app/modules/admin-statistic/controller/statistic.controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/history/view.html",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/assign-cc/view.html",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/assign-cc/controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/assign-saleman/controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/assign-saleman/view.html",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/history/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/assign-saleman/_style.scss",
+		"/Biz/antoree-crm/web/gulpfile.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/assign-cc/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/assign-cc/index.html",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/assign-saleman/index.html",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/assign-contact/view.html",
+		"/Biz/antoree-crm/web/app/modules/admin-user/view/client/list/view.html",
+		"/Biz/antoree-crm/web/app/styles/layout/_layout.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-core/controller/core.controller.js",
+		"/Biz/antoree-crm/web/app/modules/web-page/controller/page.controller.js",
+		"/Biz/antoree-crm/web/app/config/main.conf.js",
+		"/Biz/antoree-crm/web/app/modules/admin-auth/index.js",
+		"/Biz/antoree-crm/web/app/modules/admin-auth/view/client/service.js",
+		"/Biz/antoree-crm/web/app/modules/admin-auth/view/client/profile-sidebar.html",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/process/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/process/router.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/edit/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/edit-all/view.html",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/edit-all/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/api-user/index.js",
+		"/Biz/antoree-crm/web/app/modules/admin-dashboard/index.js",
+		"/Biz/antoree-crm/web/app/modules/admin-user/view/client/edit/controller.js",
+		"/Biz/antoree-crm/web/app/modules/web-core/controller/core.controller.js",
+		"/Biz/antoree-crm/web/app/config/production.conf.js",
+		"/Biz/antoree-crm/web/app/views/layouts/admin/partials/header.html",
+		"/Biz/antoree-crm/web/app/modules/web-user/controller/user.controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-auth/view/client/config.js",
+		"/Biz/antoree-crm/web/app/bootstrap/bootstrap.js",
+		"/Biz/antoree-crm/web/app/modules/admin-user/index.js",
+		"/Biz/antoree-crm/web/app/modules/admin-user/controller/user.controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-user/view/client/edit/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-user/view/client/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/edit-all/controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/edit-full/router.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/edit-full/view.html",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/edit-full/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/add/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/add/router.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/assign-contact/_style.scss",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/assign-contact/controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/assign-contact",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/popup/view.tpl",
+		"/Biz/antoree-crm/web/app/modules/admin-auth/view/signin.html",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/view/client/edit/router.js",
+		"/Biz/antoree-crm/web/app/services/datetime.js",
+		"/Biz/antoree-crm/web/app/modules/admin-salecontact/model/saleinfocontact.model.js",
+		"/Library/LaunchDaemons/io.redis.redis-server.plist",
+		"/Library/LaunchDaemons/org.mongo.mongod copy.plist",
+		"/Biz/antoree-crm/web/app/modules/admin-core/view/client/js/directive.js",
+		"/Biz/antoree-crm/web/app/lib/static.js",
+		"/Biz/antoree-crm/web/app/lib/mongo.js",
+		"/Biz/antoree-crm/web/app/lib/pubsub.js",
+		"/Biz/antoree-crm/web/app/lib/session.js",
+		"/Biz/antoree-crm/web/app/lib/redis.js",
+		"/Biz/antoree-crm/web/app/modules/admin-post/controller/post.controller.js",
+		"/Biz/antoree-crm/web/app/modules/admin-user/view/client/edit/router.js",
+		"/Biz/antoree-crm/web/app/modules/admin-user/view/client/list/router.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"/Biz/antoree-crm/web/app",
+			"/Biz/antoree-crm/web/app/modules",
+			"/Biz/antoree-crm/web/app",
+			"/Biz/antoree-crm/web/app/lib",
+			"/Biz/antoree-crm/web/app/bootstrap",
+			"/Biz/antoree-crm/web/app/modules",
+			"/Biz/antoree-crm/web/app",
+			"/Biz/antoree-crm/web/app/modules",
+			"/Biz/antoree-crm/web",
+			"/Biz/bzskeleton-angularjs",
+			"/Biz/bzskeleton-angularjs/app",
+			"/Biz/bzskeleton-angularjs/app/modules",
+			"/Biz/bzskeleton-angularjs/app",
+			"/Biz/bzskeleton-angularjs/backend/api",
+			"/Biz/bzskeleton-angularjs/app",
+			"/Biz/bzskeleton-angularjs/app/modules/shared",
+			"/Biz/bzskeleton-angularjs/dist/admin/modules",
+			"/Biz/bzskeleton-angularjs/app",
+			"/Biz/bzskeleton-angularjs/app/admin/modules",
+			"/Biz/bzskeleton-angularjs/app/modules/menu",
+			"/Biz/prudential-gia-dinh-la-vo-gia/app",
+			"/Biz/bzskeleton-angularjs/app",
+			"/Biz/bzskeleton-angularjs/app/admin",
+			"/Biz/bizzon-resource-center/app",
+			"/Tin Data/Biz/bizzon-resources-center/app",
+			"/Tin Data/Biz/bizzon-resources-center/app/angularjs",
+			"/Tin Data/Biz/bizzon-resources-center/app",
+			"/Tin Data/Biz/bzskeleton-angularjs",
+			"/Tin Data/Biz/bzskeleton-angularjs/app/angularjs",
+			"/Tin Data/Biz/bzskeleton-angularjs/app",
+			"/Tin Data/Biz/bzskeleton-angularjs",
+			"/Library/WebServer/Documents/html-bobby/app/angularjs",
+			"/Library/WebServer/Documents/html-bobby",
+			"/Library/WebServer/Documents/html-bobby/app",
+			"/Library/WebServer/Documents/html-bobby/app/angularjs",
+			"/Library/WebServer/Documents/html-bobby/app",
+			"/Tin Data/Biz/bobby/app",
+			"/Tin Data/Biz/bzskeleton-angularjs/app",
+			"/Tin Data/Biz/bzskeleton-angularjs/app/angularjs",
+			"/Tin Data/Biz/bzskeleton-angularjs/app",
+			"/Tin Data/Biz/bzskeleton-angularjs/app/angularjs",
+			"/Volumes/Data/Biz/bzskeleton-angularjs/app/angularjs",
+			"/Volumes/Data/Me/bzSkeleton/app",
+			"/Volumes/Data/Me/bzSkeleton/app/angularjs",
+			"/Volumes/Data/Me/bzSkeleton",
+			"/Volumes/Data/Me/bzSkeleton/app",
+			"/Volumes/Data/Biz/nam-long-corp-the-flora/app",
+			"/Volumes/Data/Biz/nam-long-corp-the-flora/app/angularjs",
+			"/Volumes/Data/Biz/nam-long-corp-the-flora/app",
+			"/Volumes/Data/Biz/nam-long-corp-the-flora/app/angularjs",
+			"/Volumes/Data/Biz/nam-long-corp-the-flora/app",
+			"/Volumes/Data/Biz/nam-long-corp-the-flora/app/angularjs",
+			"/Volumes/Data/Biz/nam-long-corp-the-flora/app",
+			"/Volumes/Data/Biz/nam-long-corp-the-flora/app/angularjs",
+			"/Volumes/Data/Biz/DigitalActive/app/angularjs",
+			"/Volumes/Data/Me/bzSkeleton/app",
+			"/Volumes/Data/Me/bzSkeleton/app/angularjs",
+			"/Volumes/Data/Biz/Template/app/angularjs",
+			"/Volumes/Data/Biz/Template/app",
+			"/Volumes/Data/Biz/Template/app/angularjs",
+			"/Volumes/Data/Biz/Template/app",
+			"/Volumes/Data/Biz/Template/app/angularjs",
+			"D:\\BizzOn\\Resources\\template\\app",
+			"C:\\Users\\Hisn\\Desktop\\Cocoon\\Demo",
+			"D:\\BizzOn\\Resources\\template\\app",
+			"D:\\BizzOn\\Resources\\template",
+			"D:\\BizzOn\\Resources\\template\\app\\styles",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\new\\app\\styles\\partials",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\new\\app\\angularjs\\directives",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\new\\app",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\new\\app\\angularjs",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\new\\app",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\new\\app\\angularjs\\data",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\new\\app\\styles",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\new\\app\\angularjs",
+			"D:\\BizzOn\\Projects\\Viettel\\trunk\\development\\html\\microsite\\app\\styles\\partials",
+			"D:\\BizzOn\\Resources\\template\\app\\scripts",
+			"D:\\BizzOn\\Resources\\template\\app\\angularjs",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\microsite\\app",
+			"D:\\BizzOn\\Projects\\HoiDocThan\\trunk\\development\\html",
+			"D:\\BizzOn\\Projects\\HoiDocThan\\trunk\\development\\html\\microsite",
+			"D:\\BizzOn\\Projects\\Vinamilk\\trunk\\development\\html\\mobile\\app\\styles\\partials",
+			"D:\\BizzOn\\Projects\\Vinamilk\\trunk\\development\\html\\mobile\\app\\scripts",
+			"D:\\BizzOn\\Projects\\Vinamilk\\trunk\\development\\html\\mobile\\app\\styles\\partials",
+			"D:\\BizzOn\\Projects\\Vinamilk\\trunk\\development\\html\\mobile\\app\\scripts",
+			"D:\\BizzOn\\Projects\\Vinamilk\\trunk\\development\\html\\mobile\\app\\styles\\partials",
+			"D:\\BizzOn\\Projects\\Demo\\enrich\\app\\angularjs\\partials",
+			"D:\\BizzOn\\Projects\\Demo\\enrich\\app",
+			"D:\\BizzOn\\Projects\\Demo\\enrich\\app\\angularjs\\data",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\microsite\\app\\angularjs\\data",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\microsite\\app",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\microsite\\app\\angularjs",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\microsite\\app",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\microsite\\app\\angularjs",
+			"D:\\BizzOn\\Projects\\Enrich\\trunk\\development\\html\\microsite\\app",
+			"D:\\BizzOn\\Projects\\Samsung\\trunk\\development\\html\\facebooktab\\app\\styles\\partials",
+			"D:\\BizzOn\\Projects\\HongHai\\trunk\\development\\html\\microsite\\bower_components\\bootstrap-sass-official\\assets\\stylesheets\\bootstrap",
+			"D:\\BizzOn\\Projects\\HoiDocThan\\trunk\\development\\html\\microsite\\app\\styles\\partial",
+			"D:\\BizzOn\\Projects\\HongHai\\trunk\\development\\html\\microsite"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"NameS",
+			"NameSchema",
+			"name",
+			"Name",
+			"name",
+			"Name",
+			"find",
+			"Log",
+			"SaleContactSchema",
+			" ng-true-value=\"1\" ng-false-value=\"0\"",
+			"isShowMenu",
+			"showMenu",
+			"currentRole",
+			"hasRole",
+			"bzRoleSvc",
+			"pre",
+			"checkRoles",
+			"isSale",
+			"authSvc",
+			"userSvc",
+			"_.int",
+			"_.",
+			"ddmmyy2IsoDate",
+			"authSvc",
+			"pageData.profile",
+			"userRoles",
+			"userSvc",
+			"checkRoles",
+			"allow",
+			"assignTo",
+			"saleContactSvc",
+			"options",
+			"request.auth",
+			"window",
+			"$window, ",
+			"$window.user",
+			"pageMethods.auth",
+			"uid",
+			"save",
+			"_sale_usermember",
+			"numberVisiblePages",
+			"bzSaleContact",
+			";",
+			"bzNavigationSvc",
+			"_menu",
+			"html",
+			"bzDatePicker",
+			"ckEditor",
+			"element",
+			"modelCtrl",
+			"bzDatePicker",
+			"date",
+			"bz-date-picker",
+			"DD/MM/YYYY HH:mm:ss",
+			"Moment",
+			"moment",
+			"Moment",
+			"recall_schedule",
+			"toISOString",
+			"dob",
+			"level_1",
+			"dob",
+			"\"",
+			"bzTimePicker",
+			"bzDatePicker",
+			"bzDateRangePicker",
+			"bzCalendar",
+			"bzDatePicker",
+			"ll-skin-lugo",
+			"txtRecallSchedule",
+			") )",
+			"endDateTextBox",
+			"startDateTextBox",
+			"}}",
+			"{{",
+			"contact.formData",
+			"Contact",
+			"contact",
+			"\"",
+			"ngModelController",
+			"setViewValue",
+			"ngModelCtrl",
+			"attrs",
+			"bzFormatCurrency",
+			"level_35",
+			"formatMoney",
+			"txtLearnShedule",
+			"ddlLearnBegin",
+			"txtDob",
+			"saleContactEdit",
+			"saleContactProc",
+			"txtRecallSchedule",
+			"insFunction",
+			"msg",
+			"lockFormLevel2",
+			"lockFormLevel1",
+			"submittedLevel1",
+			"lockFormCallInfo",
+			"update",
+			"successCb",
+			"'Liên hệ'",
+			"ng-model",
+			"ng-modl",
+			"moment",
+			"Moment",
+			"level_3_5",
+			"type_pay",
+			"lockForm",
+			"chkTested",
+			"lockForm",
+			"submit",
+			"saleContactProc",
+			"submitCallInfo",
+			"submitLevel1",
+			"level_2",
+			"call_info",
+			"lockFormLevel1",
+			"submittedLevel1",
+			"submitted",
+			"lockForm",
+			" <span class=\"required\">*</span>",
+			"<label",
+			"ddlJob",
+			" <span class=\"required\">*</span",
+			"submitCallInfo",
+			"lockFormCallInfo",
+			"submitCallInfo",
+			"lockFormLevel1"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\n\t\t",
+			"\t\t\t\n",
+			"page",
+			"delete data.__v;\n\t\t\tdelete data.password_token;\n\t\t\tdelete data.created;\n\t\t\tdelete data.provider;\n\t\t\tdelete data.activeToken;",
+			"();\n",
+			"\n.",
+			">\n",
+			"\n\t\t\t\t",
+			">\n",
+			"queryData",
+			"bzResourceSvc",
+			"\n    ",
+			"\n\t\t\t\t",
+			"Javascript",
+			">\n",
+			"href=\"javascript:;\"",
+			"$rootScope.pVerify",
+			"profile",
+			"screen and (",
+			"680px",
+			"\t\t</",
+			"\n\t\t\t\t",
+			"ballCollideRight",
+			"\">",
+			"bzDelaySvc.delay(300);",
+			"\n\t\t",
+			"\n\t\t\t\t\t\t",
+			"localStorageService",
+			"bzAccordion",
+			"bzPopupContent",
+			"configSvc",
+			"app",
+			"myApp",
+			"'+",
+			"'",
+			"myAccordion",
+			"com.emerald.app.abbottgrow",
+			"Description:",
+			"moveModule",
+			"\"sharetwitter\"",
+			"                        }",
+			"HelveticaNeueB",
+			"HelveticaNeueL",
+			"HelveticaNeueR",
+			"#/journeys?",
+			"$scope",
+			"'"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "web/app/modules/admin-log/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								182,
+								182
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "javascript",
+							"buffer_scroll_name": "1afbb1af",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "web/app/modules/admin-log/controller/log.controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1063,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								890,
+								890
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "javascript",
+							"buffer_scroll_name": "2ba64982",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 94.0
+	},
+	"output.find_results":
+	{
+		"height": 294.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 28.0
+	},
+	"pinned_build_system": "",
+	"project": "Antoree-CRM.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/Library/WebServer/Documents/bobby/api/api_bobby.sublime-project"
+			],
+			[
+				"\\",
+				"D:\\BizzOn\\Resources\\template\\template.sublime-project"
+			],
+			[
+				"pnj",
+				"D:\\BizzOn\\Projects\\PNJ\\development\\html\\microsite\\Pnj.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		]
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 244.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

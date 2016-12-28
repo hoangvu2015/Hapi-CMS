@@ -1,0 +1,163 @@
+<div id="mod-post">
+	<section class="content-header">
+		<h1>
+			<span>Bài viết</span>
+			<small>Danh sách</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+			<li class="active">Bài viết</li>
+		</ol>
+	</section>
+	<div class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-header with-border no-caption">
+						<h3 class="box-title">Bài viết</h3>
+					</div>
+					<div class="box-body">
+						<!-- Toolbar -->
+						<div class="toolbar">
+							<div class="form-inline pull-right">
+								<div class="form-group form-group-item">
+									<label for="ddlFilterCategories">Danh mục</label>
+									<select name="ddlFilterCategories" id="ddlFilterCategories" class="ddl ddlFilter form-control" ng-model="post.queryParams.cateid" ng-change="post.filter()">
+										<option value="">- Chọn -</option>
+										<option ng-repeat="cate in post.categories track by cate.id" value="{{cate.id}}" ng-bind="cate.name"></option>
+									</select>
+									<span class="common-sep"></span>
+									<label for="ddlFilterPublish">Publish</label>
+									<select name="ddlFilterPublish" id="ddlFilterPublish" class="ddl ddlFilter form-control" ng-model="post.queryParams.publish" ng-change="post.filter()">
+										<option value="">- Chọn -</option>
+										<option value="1">Hiện</option>
+										<option value="0">Ẩn</option>
+									</select>
+									<span class="common-sep"></span>
+									<label for="ddlFilterItemPerPage">Số dòng</label>
+									<select class="ddl ddlFilter form-control" name="ddlFilterItemPerPage" ng-model="post.queryParams.limit" ng-change="post.filter()">
+										<option value="5">5</option>
+										<option value="10">10</option>
+										<option value="20">20</option>
+										<option value="30">30</option>
+										<option value="40">40</option>
+										<option value="50">50</option>
+										<option value="100">100</option>
+									</select>
+								</div>
+								<div class="form-group form-group-item">
+									<input type="text" class="form-control" placeholder="Tìm kiếm..." ng-model="post.queryParams.keyword">
+									<button class="btn btn-primary" ng-click="post.filter()" ng-disabled="!post.queryParams.keyword.length">
+										<i class="fa fa-search"></i>
+										<span>Tìm</span>
+									</button>
+									<button class="btn btn-primary" ng-click="post.filterReset()" ng-disabled="!post.queryParams.keyword.length">
+										<i class="fa fa-refresh"></i>
+										<span>Reset</span>
+									</button>
+								</div>
+								<div class="form-group form-group-item">
+									<a class="btn btn-primary" ui-sref="post-edit({id:null})">
+										<i class="glyphicon glyphicon-plus"></i>
+										<span>Thêm</span>
+									</a>
+									<button class="btn btn-primary" ng-disabled="!post.selectedItems.length" ng-click="post.remove()">
+										<i class="glyphicon glyphicon-remove"></i>
+										<span>Xóa</span>
+									</button>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<!-- End: Toolbar -->
+						<!-- Grid -->
+						<div class="grid-wrap">
+							<div class="grid">
+								<div class="grid-section grid-head">
+									<div class="grid-row">
+										<div class="col text-center col-select">
+											<label role="checkbox" for="chk-select-all" ng-click="post.selectItem('multiple')">
+												<input id="chk-select-all" name="chk-select-all" type="checkbox" ng-model="post.selectedAll" />
+												<i></i>
+												<span></span>
+											</label>
+										</div>
+										<div class="col col-num">
+											<span>STT</span>
+										</div>
+										<div class="col sort" ng-click="post.filter('name')">
+											<span>Tên</span>
+											<i ng-if="post.queryParams.sortfield === 'name'" class="glyphicon glyphicon-chevron-{{post.queryParams.sortdir === 'desc' ? 'down' : 'up'}}"></i>
+										</div>
+										<div  class="col col-picture">
+											<span>Hình ảnh</span>
+										</div>
+										<div class="col col-publish sort" ng-click="post.filter('status')">
+											<span>Publish</span>
+											<i ng-if="post.queryParams.sortfield === 'status'" class="glyphicon glyphicon-chevron-{{post.queryParams.sortdir === 'desc' ? 'down' : 'up'}}"></i>
+										</div>
+										<div class="col col-sort sort" ng-click="post.filter('sort')">
+											<span>Thứ tự</span>
+											<i ng-if="post.queryParams.sortfield === 'sort'" class="glyphicon glyphicon-chevron-{{post.queryParams.sortdir === 'desc' ? 'down' : 'up'}}"></i>
+										</div>
+										<div class="col text-center col-control">
+											<span>Sửa/Xóa</span>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+								<div class="grid-section grid-body" ng-if="post.posts.length">
+									<div class="grid-row" ng-repeat="item in post.posts track by item.id" ng-class="{'selected': item.selected}">
+										<div class="col col-select text-center">
+											<label role="checkbox" for="chk-select{{$index}}">
+												<input type="checkbox" id="chk-select{{$index}}" name="chk-select{{$index}}" ng-model="item.selected" ng-click="post.selectItem('single')" />
+												<i></i>
+												<span></span>
+											</label>
+										</div>
+										<div class="col col-num" ng-bind="((post.queryParams.page - 1) * post.queryParams.limit) + $index + 1"></div>
+										<div class="col">
+											<a ui-sref="post-edit({id:1})" ng-bind="item.name"></a>
+										</div>
+										<div class="col col-picture">
+											<img ng-src="{{item.image}}">
+										</div>
+										<div class="col col-publish">
+											<label role="switcher">
+												<input type="checkbox" ng-model="item.status" ng-true-value="1" ng-false-value="0" ng-change="post.publish(item.id, item.status)">
+												<i></i>
+												<span></span>
+											</label>
+										</div>
+										<div class="col col-sort">
+											<input id="txtSort" name="txtSort" class="txt-sort" type="number" bz-input-number ng-model="item.sort" ng-pattern="/[0-9]/" min="1" required />
+											<a class="btn-sort" ng-click="post.sort(item.id, item.sort)">
+												<i class="glyphicon glyphicon-floppy-disk"></i>
+											</a>
+										</div>
+										<div class="col text-center col-control">
+											<a class="btn-edit" ui-sref="post-edit({id:1})">
+												<i class="fa fa-pencil"></i>
+											</a>
+											<a class="btn-delete" ng-click="post.remove(item.id)">
+												<i class="fa fa-close"></i>
+											</a>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+							<div class="grid-empty" ng-if="!post.posts.length">
+								<p class="no-result text-center">Không có dữ liệu.</p>
+							</div>
+							<!-- Pagination -->
+							<bz-pager class="text-right" page-state="admin.post" page-params="post.queryParams"></bz-pager>
+							<!-- End: Pagination -->
+						</div>
+						<!-- End: Grid -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

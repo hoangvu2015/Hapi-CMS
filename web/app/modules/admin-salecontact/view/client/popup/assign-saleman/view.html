@@ -1,0 +1,76 @@
+<div id="pop-assign-cc" class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$dismiss()">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title">Bàn giao cho saleman</h4>
+		</div>
+		<div class="modal-body">
+			<div class="pop-content">
+				<div class="basic-info" ng-if="vmASM.type != 'multiple'">
+					<div class="row">
+						<div class="col-md-6">
+							<label>Học viên:</label>
+							<span>[[vmASM.contact._id]]</span><br>
+							<label>Tên:</label>
+							<span>[[vmASM.contact.level_1.name]]</span><br>
+						</div>
+						<div class="col-md-6">
+							<label>Email:</label>
+							<span>[[vmASM.contact.level_1.email]]</span><br>
+							<label>Số điện thoại:</label>
+							<span>[[vmASM.contact.level_1.phone]]</span>
+						</div>
+					</div>
+				</div>
+				<div class="line"></div>
+				<div class="row">
+					<form novalidate name="frmAssignSaleman" ng-submit="vmASM.submit(frmAssignSaleman.$valid)">
+						<div class="col-md-6 form">
+							<div class="form-group" ng-if="vmASM.type != 'multiple'">
+								<label class="control-label">Từ:</label>
+								<strong>[[vmASM.contact._sale_usermember]]</strong>
+							</div>
+						</div>
+						<div class="col-md-8 to">
+							<!-- <div class="form-horizontal"> -->
+								<div class="form-group">
+									<label for="ddlSalemans" class="col-md-4 control-label">Đến Saleman:</label>
+									<div class="col-md-8">
+										<select id="ddlSalemans" name="ddlSalemans" class="form-control" ng-model="vmASM.formData._user_dest" required>
+											<option value="">--Chọn Saleman--</option>
+											<option ng-repeat="sale in vmASM.salemans" value="[[sale._id]]">
+												[[sale.email]]
+												[[sale.typesText]]
+											</option>
+										</select>
+										<div class="messages-error" ng-messages="frmAssignSaleman.ddlSalemans.$error" ng-if="vmASM.submitted">
+											<div ng-message="required">Bạn chưa chọn saleman.</div>
+										</div>
+									</div>
+								</div>
+							<!-- </div> -->
+						</div>
+						<div class="col-md-12" ng-if="vmASM.type != 'multiple'">
+							<div class="form-group">
+								<label>Ghi chú bàn giao: </label>
+								<textarea class="form-control" name="txtNote" id="txtNote" cols="30" rows="6" ng-model="vmASM.formData.note"></textarea>
+							</div>
+						</div>
+						<!-- <pre ng-bind="vmASM.formData | json"></pre> -->
+					</form>
+				</div>
+			</div>
+		</div><!-- End: Body -->
+		<div class="modal-footer">
+			<button bz-submit type="submit" class="btn btn-flat btn-primary btn-submit" ng-class="{'loading-btn': vmASM.lockForm}" ng-disabled="vmASM.lockForm" ng-click="vmASM.submit(frmAssignSaleman.$valid)">
+				<i class="glyphicon glyphicon-floppy-disk" ng-if="!vmASM.lockForm"></i>
+				<span>Bàn giao học viên</span>
+			</button>
+		</div>
+	</div>
+	<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+

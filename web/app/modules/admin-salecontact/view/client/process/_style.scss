@@ -1,0 +1,39 @@
+#mod-salecontact-process{
+	.head-style{
+		font-size: 20px;
+		margin: 0;
+	}
+	.contact-msg{
+		padding:10px;
+		border-radius:2px;
+		font-weight: bold;
+		margin-bottom:10px;
+		cursor: pointer;
+		p{
+			margin:2px 0;
+			font-size: 18px;
+			color: red;
+		}
+	}
+	.row-level{
+		margin:0 0 20px;
+	}
+	.row-title{
+		margin:0 0 10px;
+	}
+	.level{
+		padding: 5px 0;
+		margin: 0;
+	}
+	.line{
+		height:3px;
+		margin-bottom:30px;
+	}
+	#btn-lv345{
+		margin-top: 10px;
+	}
+	.scroll-table{
+		overflow-y: scroll;
+    	max-height: 250px;
+	}
+}

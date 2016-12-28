@@ -1,0 +1,34 @@
+/******************************************************************
+Component
+*******************************************************************/
+@import "../styles/tools/settings";
+@import "../styles/component/message";
+/******************************************************************
+Modules Load Auto
+*******************************************************************/
+/*inject-module:scss*/
+@import "../../../../app/modules/admin-dashboard/view/client/_style.scss";
+@import "../../../../app/modules/admin-post/view/client/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/_style.scss";
+@import "../../../../app/modules/admin-statistic/view/client/_style.scss";
+@import "../../../../app/modules/admin-auth/view/client/login/_style.scss";
+@import "../../../../app/modules/admin-post/view/client/edit/_style.scss";
+@import "../../../../app/modules/admin-post/view/client/list/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/edit/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/list/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/list-saleman/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/list-saleman-dup/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/list-saleman-eviction/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/list-saleman-eviction-dup/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/list-search/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/list-tmp/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/process/_style.scss";
+@import "../../../../app/modules/admin-user/view/client/edit/_style.scss";
+@import "../../../../app/modules/admin-user/view/client/edit-profile/_style.scss";
+@import "../../../../app/modules/admin-user/view/client/list-sale/_style.scss";
+@import "../../../../app/modules/admin-statistic/view/client/list/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/popup/assign-cc/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/popup/assign-contact/_style.scss";
+@import "../../../../app/modules/admin-salecontact/view/client/popup/assign-saleman/_style.scss";
+@import "../../../../app/modules/admin-user/view/client/popup/change-pass/_style.scss";
+/*endinject*/

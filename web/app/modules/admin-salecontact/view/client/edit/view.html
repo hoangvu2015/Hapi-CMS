@@ -1,0 +1,203 @@
+Content Wrapper. Contains page content -->
+<div id="mod-salecontact-edit" class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			<span>Sale Contact</span>
+			<small>[[saleContactEdit.queryParams.id ? 'Cập nhật' : 'Thêm mới']]</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+			<li class="active">Sale Contact</li>
+		</ol>
+	</section>
+
+	<!-- Main content -->
+	<section class="content">
+
+		<!-- SELECT2 EXAMPLE -->
+		<div class="box box-default">
+			<div class="box-header with-border">
+				<h3 class="box-title">[[userEdit.queryParams.id ? 'Cập nhật' : 'Thêm mới']]</h3>
+
+				<div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+				<form novalidate id="frmSaleContact" name="frmSaleContact" ng-submit="saleContactEdit.save(frmSaleContact.$valid)">
+					<div class="box-body">
+						<!-- Toolbar -->
+						<div class="toolbar">
+							<div class="form-inline pull-right">
+								<div class="form-group form-action">
+									<button bz-submit type="submit" class="btn btn-success btn-flat btn-submit" ng-class="{'loading-btn': saleContactEdit.lockForm}" ng-disabled="saleContactEdit.lockForm">
+										<i class="glyphicon glyphicon-floppy-disk" ng-if="!saleContactEdit.lockForm"></i>
+										<span>Lưu</span>
+									</button>
+									<a ui-sref="contactsaleman({uid: authSvc.getProfile().uid})" class="btn btn-primary btn-flat">
+										<i class="glyphicon glyphicon-remove"></i>
+										<span>Hủy bỏ</span>
+									</a>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<!-- End: Toolbar -->
+						<div class="row">
+							<div class="col-md-4">
+								<!-- Tên -->
+								<div class="form-group">
+									<label class="control-label" for="txtName">Tên <span class="required">*</span></label>
+									<input id="txtName" name="txtName" class="form-control" type="text" ng-model="saleContactEdit.formData.level_1.name" ng-pattern="/[a-zA-Z0-9]/" required />
+									<div class="messages-error" ng-messages="frmSaleContact.txtName.$error" ng-if="saleContactEdit.submitted">
+										<div ng-message="required">Bạn chưa nhập tên.</div>
+										<div ng-message="pattern">Tên không được chứa các ký tự đặc biệt.</div>
+									</div>
+								</div>
+								<!-- Email -->
+								<div class="form-group">
+									<label class="control-label" for="txtEmail">Email <span ng-show="!saleContactEdit.queryParams._sale_usermember" class="required">*</span></label>
+
+									<input ng-if="saleContactEdit.queryParams._sale_usermember" class="form-control" id="txtEmail" name="txtEmail" type="text"  ng-model="saleContactEdit.formData.level_1.email" ng-pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" />
+
+									<input ng-if="!saleContactEdit.queryParams._sale_usermember" class="form-control" id="txtEmail" name="txtEmail" type="text"  ng-model="saleContactEdit.formData.level_1.email" ng-pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" />
+
+									<div class="messages-error" ng-messages="frmSaleContact.txtEmail.$error" ng-if="saleContactEdit.submitted">
+										<div ng-message="required">Bạn chưa nhập email.</div>
+										<div ng-message="pattern">Email không hợp lệ.</div>
+									</div>
+								</div>
+								<!-- Skype -->
+								<div class="form-group">
+									<label class="control-label" for="txtSkype">Skype</label>
+									<input id="txtSkype" name="txtSkype" class="form-control" type="text" ng-model="saleContactEdit.formData.level_1.skype" />
+								</div>
+								<!-- Điện thoại -->
+								<div class="form-group">
+									<label class="control-label" for="txtPhone">Điện thoại <span class="required">*</span></label>
+									<input id="txtPhone" name="txtPhone" class="form-control" type="text" ng-model="saleContactEdit.formData.level_1.phone" ng-pattern="/^[0][0-9]*$/" required />
+									<div class="messages-error" ng-messages="frmSaleContact.txtPhone.$error" ng-if="saleContactEdit.submitted" ng-messages-multiple>
+										<div ng-message="required">Bạn chưa nhập số điện thoại.</div>
+										<div ng-message="pattern">Số điện thoại không hợp lệ, nhập số 0 trước.</div>
+									</div>
+								</div>
+								<!-- Điện thoại 2 -->
+								<div class="form-group">
+									<label class="control-label" for="txtPhone2">Điện thoại 2</label>
+									<input id="txtPhone2" name="txtPhone2" class="form-control" type="text" ng-model="saleContactEdit.formData.level_1.phone2" />
+								</div>
+								<!-- Độ tuổi -->
+								<div class="form-group">
+									<label class="control-label" for="ddlAge">Độ tuổi</label>
+									<select id="ddlAge" name="ddlAge" class="form-control" ng-model="saleContactEdit.formData.level_1.age">
+										<option value="">Chọn độ tuổi</option>
+										<option value="Dưới 6 tuổi">Dưới 6 tuổi</option>
+										<option value="Từ 6 - 13 tuổi">Từ 6 - 13 tuổi</option>
+										<option value="Từ 13 - 18 tuổi">Từ 13 - 18 tuổi</option>
+										<option value="Từ 18 - 24 tuổi">Từ 18 - 24 tuổi</option>
+										<option value="Trên 24 tuổi">Trên 24 tuổi</option>
+									</select>
+								</div>
+								<!-- Đối tượng -->
+								<div class="form-group">
+									<label class="control-label">Đối tượng</label>
+									<div>
+										<label for="optUndefined" role="radio">
+											<input i-check id="optUndefined" name="optType" value="" ng-model="saleContactEdit.formData.type" type="radio" class="minimal">
+											<i></i>
+											<span>Chưa xác định</span>
+										</label>
+										<span>&nbsp;&nbsp;</span>
+										<label for="optKid" role="radio">
+											<input i-check id="optKid" name="optType" value="kid" ng-model="saleContactEdit.formData.type" type="radio" class="minimal">
+											<i></i>
+											<span>Kid</span>
+										</label>
+										<span>&nbsp;&nbsp;</span>
+										<label for="optWord" role="radio">
+											<input i-check id="optWord" name="optType" value="work" ng-model="saleContactEdit.formData.type" type="radio" class="minimal">
+											<i></i>
+											<span>Work</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<!-- Ngày sinh -->
+								<div class="form-group">
+									<label class="control-label">Ngày sinh</label>
+									<div class="input-group">
+										<input bz-date-picker type="text" id="txtDob" name="txtDob" class="form-control" ng-model="saleContactEdit.formData.level_1.dob">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
+										</div>
+									</div>
+								</div>
+								<!-- Nghề nghiệp -->
+								<div class="form-group">
+									<label class="control-label" for="ddlJob">Nghề nghiệp</label>
+									<select class="form-control" ng-model="saleContactEdit.formData.level_1.career" ng-options=" item.value as (item.name) group by item.group for item in saleContactEdit.constCareer">
+										<option value=''>-- Chọn nghề nghiệp --</option>
+									</select>
+								</div>
+								<!-- Nguồn Contact -->
+								<div class="form-group">
+									<label class="control-label" for="ddlContact">Nguồn Contact</label>
+									<select class="form-control" ng-model="saleContactEdit.formData.level_1.source_contact" ng-options=" item.value as (item.name) group by item.group for item in saleContactEdit.contsSourceList">
+									</select>
+								</div>
+								<!-- Địa chỉ -->
+								<div class="form-group">
+									<label class="control-label" for="txtAddress">Địa chỉ</label>
+									<textarea id="txtAddress" name="txtAddress" class="form-control" cols="30" rows="3" ng-model="saleContactEdit.formData.level_1.address"></textarea>
+								</div>
+								<!-- Tỉnh thành -->
+								<div class="form-group">
+									<label class="control-label" for="ddlProvince">Tỉnh thành</label>
+									<select class="form-control" ng-model="saleContactEdit.formData.level_1.province" ng-options="key as value.name for (key , value) in saleContactEdit.constMap[0]">
+										<option value=''>-- Chọn Tỉnh --</option>
+									</select>
+									<!-- <pre>[[saleContactEdit.formData.level_1.province | json]]</pre> -->
+								</div>
+								<!-- Quận huyện -->
+								<div class="form-group">
+									<label class="control-label" for="ddlDistrict">Quận huyện</label>
+									<select class="form-control" ng-model="saleContactEdit.formData.level_1.district" ng-options="key as value for (key , value) in saleContactEdit.constMap[0][saleContactEdit.formData.level_1.province].districts">
+										<option value=''>-- Chọn Quận huyện --</option>
+									</select>
+									<!-- <pre>[[saleContactEdit.formData.level_1.district | json]]</pre> -->
+								</div>
+							</div>
+							<div class="col-md-4">
+								<!-- Thông tin học -->
+								<div class="form-group">
+									<label class="control-label" for="txtNote">Thông tin học</label>
+									<textarea id="txtNote" name="txtNote" class="form-control" cols="30" rows="7" ng-model="saleContactEdit.formData.level_1.learn_info"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="box-footer">
+						<a ui-sref="contactsaleman({uid: authSvc.getProfile().uid})" class="btn btn-primary btn-flat">
+							<i class="glyphicon glyphicon-remove"></i>
+							<span>Hủy bỏ</span>
+						</a>
+						<button bz-submit type="submit" class="btn btn-success btn-flat btn-submit" ng-class="{'loading-btn': saleContactEdit.lockForm}" ng-disabled="saleContactEdit.lockForm">
+							<i class="glyphicon glyphicon-floppy-disk" ng-if="!saleContactEdit.lockForm"></i>
+							<span>Lưu</span>
+						</button>
+					</div>
+					<!-- <pre>[[saleContactEdit.formData | json]]</pre> -->
+				</form>
+			</div>
+			<!-- /.box-body -->
+		</div>
+		<!-- /.box -->
+
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper

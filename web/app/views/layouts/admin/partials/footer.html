@@ -1,0 +1,115 @@
+{{#if_eq settings.env "production"}}
+<script src="dist/admin/scripts/vendor.min.js"></script>
+<script src="dist/admin/scripts/main.min.js"></script>
+{{else}}
+
+<!-- build:js vendor.min.js -->
+<!-- bower:js -->
+<script src="assets/admin/bower_components/jquery/dist/jquery.js"></script>
+<script src="assets/admin/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="assets/admin/bower_components/jrespond/jRespond.js"></script>
+<script src="assets/admin/bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="assets/admin/bower_components/magnific-popup/dist/jquery.magnific-popup.js"></script>
+<script src="assets/admin/bower_components/angular/angular.js"></script>
+<script src="assets/admin/bower_components/angular-animate/angular-animate.js"></script>
+<script src="assets/admin/bower_components/angular-messages/angular-messages.js"></script>
+<script src="assets/admin/bower_components/angular-resource/angular-resource.js"></script>
+<script src="assets/admin/bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="assets/admin/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="assets/admin/bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+<script src="assets/admin/bower_components/bz-popup/scripts/popup.js"></script>
+<script src="assets/admin/bower_components/bz-popup/scripts/angular-popup.js"></script>
+<script src="assets/admin/bower_components/is_js/is.js"></script>
+<script src="assets/admin/bower_components/gnob/gnob.js"></script>
+<script src="assets/admin/bower_components/cropper/dist/cropper.js"></script>
+<script src="assets/admin/bower_components/moment/moment.js"></script>
+<script src="assets/admin/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="assets/admin/bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
+<script src="assets/admin/bower_components/angularjs-datetime-picker/angularjs-datetime-picker.js"></script>
+<script src="assets/admin/bower_components/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.js"></script>
+<script src="assets/admin/bower_components/lodash/lodash.js"></script>
+<script src="assets/admin/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="assets/admin/bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="assets/admin/bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
+<script src="assets/admin/bower_components/file-saver/FileSaver.js"></script>
+<script src="assets/admin/bower_components/socket.io-client/dist/socket.io.js"></script>
+<script src="assets/admin/bower_components/AdminLTE/dist/js/app.min.js"></script>
+<script src="assets/admin/bower_components/AdminLTE/plugins/iCheck/icheck.min.js"></script>
+<!-- endbower -->
+
+<!-- Js Libs Manual-->
+<script src="libs/ng-table-3.0.1/bundles/ng-table.js"></script>
+<script src="libs/ckeditor/ckeditor.js"></script>
+<!-- endbuild -->
+
+<!-- build:js main.min.js -->
+<!-- Global, Utils:js -->
+<script src="assets/admin/scripts/languages.js"></script>
+<script src="assets/admin/scripts/variables.js"></script>
+<script src="assets/admin/scripts/utils/datetime.js"></script>
+<script src="assets/admin/scripts/utils/excel.js"></script>
+<script src="assets/admin/scripts/utils/methods.js"></script>
+<script src="assets/admin/scripts/utils/plugins.js"></script>
+<script src="assets/admin/scripts/utils/prototypes.js"></script>
+<script src="assets/admin/scripts/utils/sort.js"></script>
+<script src="assets/admin/scripts/utils/storage.js"></script>
+<!-- endinject -->
+
+<!-- AngularJs:js -->
+<script src="modules/admin-core/view/client/bootstrap.js"></script>
+<script src="modules/admin-statistic/view/client/config.js"></script>
+<script src="modules/admin-user/view/client/config.js"></script>
+<script src="modules/admin-salecontact/view/client/config.js"></script>
+<script src="modules/admin-post/view/client/config.js"></script>
+<script src="modules/admin-dashboard/view/client/config.js"></script>
+<script src="modules/admin-auth/view/client/config.js"></script>
+<script src="modules/admin-user/view/client/define.js"></script>
+<script src="modules/admin-salecontact/view/client/define.js"></script>
+<script src="modules/admin-core/view/client/define.js"></script>
+<script src="modules/admin-statistic/view/client/service.js"></script>
+<script src="modules/admin-user/view/client/service.js"></script>
+<script src="modules/admin-salecontact/view/client/service.js"></script>
+<script src="modules/admin-core/view/client/service.js"></script>
+<script src="modules/admin-user/view/client/popup/change-pass/controller.js"></script>
+<script src="modules/admin-salecontact/view/client/popup/assign-saleman/controller.js"></script>
+<script src="modules/admin-salecontact/view/client/popup/assign-contact/controller.js"></script>
+<script src="modules/admin-salecontact/view/client/popup/assign-cc/controller.js"></script>
+<script src="modules/admin-statistic/view/client/list/controller.js"></script>
+<script src="modules/admin-user/view/client/list-sale/controller.js"></script>
+<script src="modules/admin-user/view/client/edit-profile/controller.js"></script>
+<script src="modules/admin-user/view/client/edit/controller.js"></script>
+<script src="modules/admin-salecontact/view/client/process/controller.js"></script>
+<script src="modules/admin-salecontact/view/client/list-tmp/controller.js"></script>
+<script src="modules/admin-salecontact/view/client/list-search/controller.js"></script>
+<script src="modules/admin-salecontact/view/client/list-saleman-eviction-dup/controller.js"></script>
+<script src="modules/admin-salecontact/view/client/list-saleman-eviction/controller.js"></script>
+<script src="modules/admin-salecontact/view/client/list-saleman-dup/controller.js"></script>
+<script src="modules/admin-salecontact/view/client/list-saleman/controller.js"></script>
+<script src="modules/admin-salecontact/view/client/list/controller.js"></script>
+<script src="modules/admin-salecontact/view/client/edit/controller.js"></script>
+<script src="modules/admin-post/view/client/list/controller.js"></script>
+<script src="modules/admin-post/view/client/edit/controller.js"></script>
+<script src="modules/admin-dashboard/view/client/controller.js"></script>
+<script src="modules/admin-auth/view/client/login/controller.js"></script>
+<script src="modules/admin-core/view/client/directive.js"></script>
+<script src="modules/admin-core/view/client/filter.js"></script>
+<script src="modules/admin-statistic/view/client/list/router.js"></script>
+<script src="modules/admin-user/view/client/list-sale/router.js"></script>
+<script src="modules/admin-user/view/client/edit-profile/router.js"></script>
+<script src="modules/admin-user/view/client/edit/router.js"></script>
+<script src="modules/admin-salecontact/view/client/process/router.js"></script>
+<script src="modules/admin-salecontact/view/client/list-tmp/router.js"></script>
+<script src="modules/admin-salecontact/view/client/list-search/router.js"></script>
+<script src="modules/admin-salecontact/view/client/list-saleman-eviction-dup/router.js"></script>
+<script src="modules/admin-salecontact/view/client/list-saleman-eviction/router.js"></script>
+<script src="modules/admin-salecontact/view/client/list-saleman-dup/router.js"></script>
+<script src="modules/admin-salecontact/view/client/list-saleman/router.js"></script>
+<script src="modules/admin-salecontact/view/client/list/router.js"></script>
+<script src="modules/admin-salecontact/view/client/edit/router.js"></script>
+<script src="modules/admin-post/view/client/list/router.js"></script>
+<script src="modules/admin-post/view/client/edit/router.js"></script>
+<script src="modules/admin-core/view/client/router.js"></script>
+<script src="modules/admin-dashboard/view/client/router.js"></script>
+<!-- endinject -->
+<!-- endbuild -->
+{{/if_eq}}

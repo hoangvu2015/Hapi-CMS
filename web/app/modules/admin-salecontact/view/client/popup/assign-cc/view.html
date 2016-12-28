@@ -1,0 +1,89 @@
+<div id="pop-assign-cc" class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$dismiss()">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title" ng-if="!vmACC.type">Bàn giao cho bộ phận chăm sóc lớp học</h4>
+			<h4 class="modal-title" ng-if="vmACC.type == 'view'">Chi tiết contact</h4>
+		</div>
+		<div class="modal-body">
+			<div class="pop-content">
+				<div class="basic-info">
+					<div class="row">
+						<div class="col-md-6">
+							<label>Học viên:</label>
+							<span>[[vmACC.contact.level_1.olduser_id]]</span><br>
+							<label>Tên:</label>
+							<span>[[vmACC.contact.level_1.name]]</span><br>
+							<label>Email:</label>
+							<span>[[vmACC.contact.level_1.email]]</span><br>
+							<label>Phone:</label>
+							<span>[[vmACC.contact.level_1.phone]]</span><br>
+							<label>Phone 2:</label>
+							<span>[[vmACC.contact.level_1.phone2]]</span><br>
+							<label>Skype:</label>
+							<span>[[vmACC.contact.level_1.skype]]</span><br>
+							<label>Tuổi:</label>
+							<span>[[vmACC.contact.level_1.age]]</span><br>
+							<label>Nghề nghiệp:</label>
+							<span>[[vmACC.contact.level_1.career]]</span><br>
+							<label>Địa Chỉ:</label>
+							<span>[[vmACC.contact.level_1.address]]</span><br>
+							<label>Thành phố:</label>
+							<span>[[vmACC.district]]</span><br>
+							<label>Tỉnh thành:</label>
+							<span>[[vmACC.provinceName]]</span><br>
+						</div>
+						<div class="col-md-6">
+							<label>Kết quả test:</label>
+							<a target="_blank" ng-href="[[settingJs.configs.webUrl]]/files/pdf_test/[[vmACC.contact.level_5.test_file]]">[[vmACC.contact.level_5.test_file]]</a>
+							<br/>
+							<label>Thời gian muốn học:</label>
+							<span>[[vmACC.contact.level_1.learn_begin_at]]</span><br>
+							<label>Yêu cầu giáo viên:</label>
+							<span>[[vmACC.contact.level_1.teacher_request]]</span><br>
+							<label>Trình độ học viên:</label>
+							<span>[[vmACC.contact.level_2.learner_level]]</span><br>
+							<label>Giá khóa học:</label>
+							<span>[[vmACC.contact.level_8.money_finish]]</span><br>
+							<label>Số tiền thực đóng:</label>
+							<span>[[vmACC.contact.level_8.money_finish]]</span><br>
+							<label>Hình thức đóng tiền:</label>
+							<span>[[vmACC.contact.level_8.pay_type]]</span><br>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<form ng-if="!vmACC.type" novalidate name="frmAssignCc" ng-submit="vmACC.submit(frmAssignCc.$valid)">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Ghi chú bàn giao: </label>
+								<textarea class="form-control" name="txtNote" id="txtNote" cols="30" rows="6" ng-model="vmACC.formData.note_cmd"></textarea>
+							</div>
+						</div>
+						<div class="col-md-12 text-right">
+							<!-- <button bz-submit type="submit" class="btn btn-primary btn-submit" ng-class="{'loading-btn': vmACC.lockForm}" ng-disabled="vmACC.lockForm">
+								<i class="glyphicon glyphicon-floppy-disk" ng-if="!vmACC.lockForm"></i>
+								<span>Bàn giao học viên</span>
+							</button> -->
+						</div>
+						<!-- <pre ng-bind="vmACC.formData | json"></pre> -->
+					</form>
+				</div>
+				<p class="error" ng-show="!vmACC.contact.level_8.is_received_money">Bạn chưa check đã nhận tiền từ học viên.</p>
+			</div>
+		</div><!-- End: Body -->
+		<div class="modal-footer">
+			<button ng-show="vmACC.contact.level_8.is_received_money && !vmACC.type" bz-submit type="submit" class="btn btn-primary btn-submit" ng-class="{'loading-btn': vmACC.lockForm}" ng-disabled="vmACC.lockForm" ng-click="vmACC.submit(true)">
+				<i class="glyphicon glyphicon-floppy-disk" ng-if="!vmACC.lockForm"></i>
+				Bàn giao học viên
+			</button>
+			<!-- <button class="btn btn-primary" type="button" ng-click="vmACC.submit(frmAssignCc.$valid)">OK</button> -->
+			<button class="btn btn-warning" type="button" ng-click="$dismiss()">Cancel</button>
+		</div>
+	</div>
+	<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+

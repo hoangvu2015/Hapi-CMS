@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="fragment" content="!">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="robots" content="index, follow">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="shortcut icon" href="favicon.ico">
+<!-- Social: Facebook / Open Graph -->
+<meta property="og:title" content="Title">
+<meta property="og:image" content="https://localhost:9999/images/social-avatar.jpg">
+<meta property="og:description" content="">
+<!-- Social: Twitter -->
+<meta name="twitter:title" content="Title">
+<meta name="twitter:description" content="">
+<meta name="twitter:image:src" content="https://localhost:9999/images/social-avatar.jpg">
+<!-- Social: Google+ / Schema.org  -->
+<meta itemprop="name" content="Title">
+<meta itemprop="description" content="">
+<meta itemprop="image" content="https://localhost:9999/images/social-avatar.jpg">
+
+<!-- Font Awesome, Ionicons -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+{{#if_eq settings.env "production"}}
+<link rel="stylesheet" href="dist/admin/styles/vendor.min.css">
+{{else}}
+<link rel="stylesheet" href="vendor.min.css">
+{{/if_eq}}
+
+{{#if_eq settings.env "production"}}
+<link rel="stylesheet" href="dist/admin/styles/main.min.css">
+{{else}}
+<link rel="stylesheet" href="main.min.css">
+{{/if_eq}}
+
+<style>
+	.content-wrapper{
+		min-height: 900px;
+	}
+	.content-wrapper table{
+		margin:10px auto !important;
+	}
+</style>
+<script>
+	var user = {{{json credentials}}};
+	var settings = {{{json settings}}};
+</script>

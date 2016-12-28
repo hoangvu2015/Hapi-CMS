@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns": ["node_modules", ".svn", ".git", ".hg", "CVS"],
+			"file_exclude_patterns": ["*.rdb", "*.babelrc", "*.bowerrc", "*.editorconfig", "*.gitattributes", "*.yo-rc.json", "*.sublime-workspace"],
+			"path": "."
+		}
+	]
+}

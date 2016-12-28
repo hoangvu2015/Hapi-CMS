@@ -1,0 +1,65 @@
+<!--Content Wrapper. Contains page content -->
+<div id="mod-statistic" class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			<span>Thống kê</span>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+			<li><a class="active">Báo cáo thống kê</a></li>
+		</ol>
+	</section>
+	<!-- Main content -->
+	<section class="content">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box">
+					<div class="box-header">
+						<h3 class="box-title">Báo cáo thống kê</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<div class="form-inline">
+							<div class="form-group form-group-item pull-left">
+								<a href="" ng-click="statistic.filterDay('isoWeek')">Tuần này</a> | <a href="" ng-click="statistic.filterDay('month')">Tháng này</a>
+								<select name="filterType" id="filterType" class="form-control" ng-model="statistic.queryParams.type" ng-change="statistic.filter()">
+									<option value="">- Chọn Work/Kid -</option>
+									<option value="work" [[statistic.queryParams.type == 'work' ? 'selected':'']]>Work</option>
+									<option value="kid" [[statistic.queryParams.type == 'kid' ? 'selected':'']]>Kid</option>
+								</select>
+								&nbsp&nbsp&nbsp&nbsp&nbsp
+								<button ng-click="statistic.filterReset()" class="btn btn-flat btn-warning">Reset</button>
+							</div>
+							<div class="form-group form-group-item pull-right">
+								<button ng-show="!statistic.loading" ng-click="statistic.exportExcel()" class="btn btn-flat btn-success">Export Excel</button>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<br/>
+						<div class="row-total">
+							<label>Tổng doanh số: [[statistic.totalRevenue]]đ | Tỉ lệ convert trung bình: [[statistic.convertAvg]]%</label>
+						</div>
+						<div ng-show="statistic.loading" style="text-align: center;"><img src="/assets/loading.svg" alt=""></div>
+						<table ng-show="!statistic.loading" ng-table="statistic.table" class="table table-condensed table-bordered table-striped">
+							<tr ng-repeat="item in $data">
+								<td data-title="'Saleman'">[[item.email]]</td>
+								<td data-title="'Doanh số'">[[item.revenue]] VND</td>
+								<td data-title="'Tỉ lệ Convert'">
+									<span>[[statistic.convert(item)]]%</span>
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+			<!-- /.col -->
+		</div>
+		<!-- /.row -->
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper

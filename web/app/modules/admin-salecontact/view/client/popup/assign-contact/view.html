@@ -1,0 +1,143 @@
+<div id="pop-assign-contact" class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$dismiss()">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title">Chia liên hệ</h4>
+		</div>
+		<div class="modal-body">
+			<div class="pop-content">
+				<!-- Filter -->
+				<div class="filter-wrap">
+					<form class="form-inline">
+						<div class="form-group">
+							<label for="date-picker">Chọn ngày</label>
+							<input type="text" class="form-control" id="reservationtime1">
+						</div>
+						<button bz-submit type="submit" class="btn btn-primary btn-flat btn-submit" ng-class="{'loading-btn': mvACT.lockForm}" ng-click="mvACT.applyDate()" ng-disabled="mvACT.lockForm">
+							<i class="glyphicon glyphicon-floppy-disk" ng-if="!mvACT.lockForm"></i>
+							<span>Apply</span>
+						</button>
+						<!-- <pre>[[mvACT.queryParams.date | json]]</pre> -->
+						<!-- <a class="btn btn-primary btn-flat" ng-click="mvACT.applyDate()">Apply</a> -->
+					</form>
+				</div>
+				<!-- Tabs -->
+				<ul class="nav nav-tabs">
+					<li role="presentation" ng-class="{'active': mvACT.tab === 'work'}">
+						<a ng-click="mvACT.tab = 'work'">Work</a>
+					</li>
+					<li role="presentation" ng-class="{'active': mvACT.tab === 'kid'}">
+						<a ng-click="mvACT.tab = 'kid'">Kid</a>
+					</li>
+				</ul>
+				<div class="work-group" ng-show="mvACT.tab === 'work'">
+					<h4 class="pull-right header-total" ng-if="mvACT.totalWork.all > 0">
+						<span>[[mvACT.totalWork.all]] </span>
+						<span style="color: #00a65a">- [[mvACT.totalWork.assign]] </span>
+						<span>= [[(mvACT.totalWork.all) - (mvACT.totalWork.assign)]]</span>
+					</h4>
+					<div class="clearfix"></div>
+					<!-- Grid -->
+					<div class="grid-wrap">
+						<div class="grid">
+							<div class="grid-section grid-head">
+								<div class="grid-row">
+									<div class="col">
+										<span>Saleman</span>
+									</div>
+									<div class="col col-quantity">
+										<span>Số lượng</span>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="grid-section grid-body" ng-if="mvACT.salemansTmp.work.length">
+								<div class="grid-row" ng-repeat="item in mvACT.salemansTmp.work track by item._id">
+									<div class="col">
+										<span ng-bind="item.email"></span>
+									</div>
+									<div class="col col-quantity">
+										<input style="color: #00a65a" id="txtQuantity" name="txtQuantity" ng-change="mvACT.changeQuantity('work')" class="txt-quantity" type="number" bz-input-number ng-model="item.quantity" ng-pattern="/[0-9]/" min="0" required />
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-empty" ng-if="!mvACT.salemansTmp.work.length">
+							<p class="no-result text-center">Không có dữ liệu.</p>
+						</div>
+						<div class="btn-wrap text-right" ng-if="mvACT.salemansTmp.work.length">
+							<button bz-submit type="submit" class="btn btn-success btn-flat btn-submit" ng-class="{'loading-btn': mvACT.lockFormAssign}" ng-click="mvACT.save(true)" ng-disabled="mvACT.lockFormAssign">
+								<i class="glyphicon glyphicon-floppy-disk" ng-if="!mvACT.lockFormAssign"></i>
+								<span>Chia liên hệ</span>
+							</button>
+							<!-- <button class="btn btn-primary btn-flat" ng-click="mvACT.save(true)">Chia liên hệ (Work)</button> -->
+						</div>
+					</div>
+				</div>
+				<div class="kid-group" ng-show="mvACT.tab === 'kid'">
+					<h4 class="pull-right header-total" ng-if="mvACT.totalKid.all > 0">
+						<span>[[mvACT.totalKid.all]] </span>
+						<span style="color: #00a65a">- [[mvACT.totalKid.assign]] </span>
+						<span>= [[(mvACT.totalKid.all) - (mvACT.totalKid.assign)]]</span>
+					</h4>
+					<div class="clearfix"></div>
+					<div class="grid-wrap">
+						<div class="grid">
+							<div class="grid-section grid-head">
+								<div class="grid-row">
+									<div class="col">
+										<span>Saleman</span>
+									</div>
+									<div class="col col-quantity">
+										<span>Số lượng</span>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="grid-section grid-body" ng-if="mvACT.salemansTmp.kid.length">
+								<div class="grid-row" ng-repeat="item in mvACT.salemansTmp.kid track by item._id">
+									<div class="col">
+										<span ng-bind="item.email"></span>
+									</div>
+									<div class="col col-quantity">
+										<input style="color: #00a65a" id="txtQuantity" name="txtQuantity" class="txt-quantity" type="number" bz-input-number ng-change="mvACT.changeQuantity('kid')" ng-model="item.quantity" ng-pattern="/[0-9]/" min="0" required />
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-empty" ng-if="!mvACT.salemansTmp.kid.length">
+							<p class="no-result text-center">Không có dữ liệu.</p>
+						</div>
+						<div class="btn-wrap text-right" ng-if="mvACT.salemansTmp.kid.length">
+							<button bz-submit type="submit" class="btn btn-success btn-flat btn-submit btn-flat" ng-class="{'loading-btn': mvACT.lockFormAssign}" ng-click="mvACT.save(true)" ng-disabled="mvACT.lockFormAssign">
+								<i class="glyphicon glyphicon-floppy-disk" ng-if="!mvACT.lockFormAssign"></i>
+								<span>Chia liên hệ</span>
+							</button>
+							<!-- <button class="btn btn-primary btn-flat" ng-click="mvACT.save(true)">Chia liên hệ (Kid)</button> -->
+						</div>
+
+					</div>
+				</div>
+				<!-- End: Grid -->
+				<!-- <pre>[[mvACT.salemansTmp | json]]</pre> -->
+			</div>
+		</div><!-- End: Body -->
+
+	</div>
+	<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+
+<!-- <script>
+	angular.element('#reservationtime1').daterangepicker({
+			timePicker: true,
+			timePickerIncrement: 30,
+			locale: {
+				format: 'MM/DD/YYYY h:mm A'
+			}
+		});
+	</script> -->
