@@ -200,6 +200,10 @@ Modules Load Auto
   max-height: 250px;
 }
 
+#mod-statistic #filterType {
+  margin-left: 20px;
+}
+
 #mod-user-edit .for-saleman label[role='switcher'] {
   vertical-align: middle;
   margin: 0 0 10px;
@@ -208,10 +212,6 @@ Modules Load Auto
 #mod-user-edit-profile .for-saleman label[role='switcher'] {
   vertical-align: middle;
   margin: 0 0 10px;
-}
-
-#mod-statistic #filterType {
-  margin-left: 20px;
 }
 
 #pop-assign-cc {
