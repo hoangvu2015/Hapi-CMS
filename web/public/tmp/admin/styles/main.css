@@ -25,19 +25,8 @@ Description: Bootstrap variables
 Modules Load Auto
 *******************************************************************/
 /*inject-module:scss*/
-#mod-salecontact-list .active {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-#mod-salecontact-list .ft-link {
-  font-size: 15px;
-  padding: 0 5px;
-  border-right: 1px solid black;
-}
-
-#mod-salecontact-list .ft-last {
-  border: none;
+#mod-statistic #filterType {
+  margin-left: 20px;
 }
 
 #mod-list-contact-saleman .active {
@@ -59,6 +48,21 @@ Modules Load Auto
 
 #mod-list-contact-saleman #ddl-level {
   max-width: 250px;
+}
+
+#mod-salecontact-list .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#mod-salecontact-list .ft-link {
+  font-size: 15px;
+  padding: 0 5px;
+  border-right: 1px solid black;
+}
+
+#mod-salecontact-list .ft-last {
+  border: none;
 }
 
 #mod-list-contact-saleman-dup .active {
@@ -198,10 +202,6 @@ Modules Load Auto
 #mod-salecontact-process .scroll-table {
   overflow-y: scroll;
   max-height: 250px;
-}
-
-#mod-statistic #filterType {
-  margin-left: 20px;
 }
 
 #mod-user-edit .for-saleman label[role='switcher'] {

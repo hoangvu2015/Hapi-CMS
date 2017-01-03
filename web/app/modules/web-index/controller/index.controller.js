@@ -14,7 +14,7 @@ function index() {
             // scope: ['admin']
         },
         handler: function(request, reply) {
-            return reply.view('web-index/view/home', {test:111}, {layout: 'web/layout'})
+            return reply.view('web-index/view/home', null, {layout: 'web/layout'})
         }
     };
 }
