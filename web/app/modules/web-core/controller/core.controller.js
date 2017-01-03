@@ -1,10 +1,21 @@
 'use strict';
 
 const _ = require('lodash');
+const mongoose = require('mongoose');
+const async = require('async');
 const JWT = require('jsonwebtoken');
 const aguid = require('aguid');
+// const Category = mongoose.model('Category');
 
-exports.getCredentials = function(request, reply) {
+module.exports = {
+    createGuestToken: createGuestToken,
+    getCredentials: getCredentials,
+    getMeta: getMeta,
+    handleError: handleError,
+    // getPostCategories: getPostCategories
+};
+
+function getCredentials(request, reply) {
     // Get the response object
     let response = request.response;
     // Check to see if the response is a view
@@ -18,9 +29,10 @@ exports.getCredentials = function(request, reply) {
         response.source.context.credentials = request.auth.credentials;
     }
     reply.continue();
+
 }
 
-exports.createGuestToken = function(request, reply) {
+function createGuestToken(request, reply) {
     let response = request.response;
     // Check to see if the response is a view
     if (response.variety === 'view') {
@@ -28,7 +40,7 @@ exports.createGuestToken = function(request, reply) {
         let cookieOptions = configManager.get('web.cookieOptions');
         let credentials = request.auth.credentials;
         let authToken = request.auth.token;
-        if(!authToken){
+        if (!authToken) {
             var session = {
                 valid: true,
                 id: aguid(), //a random session id,
@@ -46,10 +58,9 @@ exports.createGuestToken = function(request, reply) {
     }
 
     reply.continue();
-
 }
 
-exports.getMeta = function(request, reply) {
+function getMeta(request, reply) {
     let response = request.response;
     if (response.variety === 'view') {
         let config = request.server.configManager;
@@ -65,7 +76,8 @@ exports.getMeta = function(request, reply) {
     }
     reply.continue();
 }
-exports.handleError = function (request, reply) {
+
+function handleError(request, reply) {
 
     const response = request.response;
     if (!response.isBoom) {
@@ -78,13 +90,29 @@ exports.handleError = function (request, reply) {
     const error = response;
     const statusCode = error.output.statusCode;
 
-    if(statusCode === 404){
-        request.log(['error', 'notfound'], 'Resources is not be found');
+    if (statusCode === 404) {
+        request.log([
+            'error', 'notfound'
+        ], 'Resources is not be found');
         return reply.redirect(notFoundUrl);
-    }else if(statusCode === 403 || statusCode === 401){
-        request.log(['error', 'permission'], 'You have not permission to access this page');
+    } else if (statusCode === 403) {
+        request.log([
+            'error', 'permission'
+        ], 'You have not permission to access this page');
         return reply.redirect(loginUrl);
-    }else{
+    } else {
         return reply.continue();
     }
 };
+
+/*function getPostCategories(request, reply) {
+    let promise = Category.find({status: 1, type: 'post'});
+    promise.then(function(postCategories) {
+        let response = request.response;
+        // Check to see if the response is a view
+        if (response.variety === 'view') {
+            response.source.context.postCategories = postCategories;
+        }
+        reply.continue();
+    });
+}*/

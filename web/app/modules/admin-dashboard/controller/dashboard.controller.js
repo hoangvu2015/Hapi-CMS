@@ -15,10 +15,11 @@ function index(){
 		auth: {
 			strategy: 'jwt',
 			mode: 'try',
-			scope: ['admin']
+			scope: ['admin', 'guest']
 		},
 		handler: function(request, reply) {
-			if (!request.auth.isAuthenticated) {
+			console.log(request.auth.credentials.scope.includes('admin'));
+			if (!request.auth.isAuthenticated || !request.auth.credentials.scope.includes('admin')) {
 				return reply.redirect('/admin/signin');
 			}
 

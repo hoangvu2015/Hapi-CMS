@@ -4,7 +4,7 @@ const path = require('path');
 // Declare internals
 const internals = {};
 
-exports.register = function (server, options, next) {
+exports.register = function(server, options, next) {
 
     /*WEB*/
     /*Truy cập folder public*/
@@ -15,6 +15,18 @@ exports.register = function (server, options, next) {
             directory: {
                 path: 'public'
             }
+        },
+        config: {
+            auth: false
+        }
+    });
+    /* Trong app/module chỉ cho truy cập folder client */
+    server.route({
+        method: 'GET',
+        path: '/modules/{module}/view/client/{pathFile*}',
+        handler: function(request, reply) {
+            let file = internals.helpers.getClientPath(request, reply);
+            reply.file(file);
         },
         config: {
             auth: false
@@ -36,14 +48,11 @@ exports.register = function (server, options, next) {
             auth: false
         }
     });
-    /*END ADMIN*/
-
-    /*GENERAL*/
     /* Trong app/module chỉ cho truy cập folder client */
     server.route({
         method: 'GET',
-        path: '/modules/{module}/view/client/{pathFile*}',
-        handler: function (request, reply) {
+        path: '/admin/modules/{module}/view/client/{pathFile*}',
+        handler: function(request, reply) {
             let file = internals.helpers.getClientPath(request, reply);
             reply.file(file);
         },
@@ -51,6 +60,9 @@ exports.register = function (server, options, next) {
             auth: false
         }
     });
+    /*END ADMIN*/
+
+    /*GENERAL*/
 
     /*Truy cập folder bower full*/
     // server.route({
@@ -89,14 +101,14 @@ exports.register.attributes = {
 };
 
 internals.helpers = {
-    getFileExt: function (fileName) {
+    getFileExt: function(fileName) {
         var fileExt = fileName.split(".");
         if (fileExt.length === 1 || (fileExt[0] === "" && fileExt.length === 2)) {
             return "";
         }
         return fileExt.pop();
     },
-    getClientPath: function(request, reply){
+    getClientPath: function(request, reply) {
         // let clients = {
         //     css : 'style',
         //     js  : 'js',
@@ -105,7 +117,7 @@ internals.helpers = {
         // let file = request.params.file;
         // let fileExt = this.getFileExt(file);
         // let assetFolder = clients[fileExt];
-        let filePath = path.join('app/modules',request.params.module, 'view', 'client', request.params.pathFile );
+        let filePath = path.join('app/modules', request.params.module, 'view', 'client', request.params.pathFile);
 
         return filePath;
     }

@@ -35,11 +35,14 @@ module.exports = {
     getUserByEmail: getUserByEmail
 };
 
-function find(){
+function find() {
     return {
         auth: 'jwt',
         pre: [
-        { method: mdwAuth.mdwSaleManager(), assign: 'auth' }
+            {
+                method: mdwAuth.mdwSaleManager(),
+                assign: 'auth'
+            }
         ],
         handler: function(request, reply) {
             let config = request.server.configManager;
@@ -49,47 +52,67 @@ function find(){
             let filters = {};
 
             // Chọn user còn hoạt động
-            filters.deletedAt = {$eq: undefined};
+            filters.deletedAt = {
+                $eq: undefined
+            };
 
             // Loại bỏ user chỉ định
-            if(request.query.uid){
-                filters._id = {$ne: request.query.uid};
+            if (request.query.uid) {
+                filters._id = {
+                    $ne: request.query.uid
+                };
             }
 
             // Ngày tạo
-            if(request.query.createdAt){
-                filters.created_at = {$eq: request.query.createdat};
+            if (request.query.createdAt) {
+                filters.created_at = {
+                    $eq: request.query.createdat
+                };
             }
 
             // Từ khóa
             if (request.query.keyword && request.query.keyword.length > 0) {
                 let re = new RegExp(request.query.keyword, 'i');
                 filters.$or = [
-                { name: re},
-                { email: re}
+                    {
+                        name: re
+                    }, {
+                        email: re
+                    }
                 ]
             }
 
             // Trạng thái kích hoạt
-            if(request.query.status){
-                filters.status = {$eq: request.query.status};
+            if (request.query.status) {
+                filters.status = {
+                    $eq: request.query.status
+                };
             }
 
             // Quyền
-            if(request.query.role){
-                filters.roles = {$in: [request.query.role]};
+            if (request.query.role) {
+                filters.roles = {
+                    $in: [request.query.role]
+                };
             }
 
-            User
-            .find(filters)
-            .sort('-createdAt')
-            .paginate(page, itemsPerPage, function(err, items, total) {
+            User.find(filters).sort('-createdAt').paginate(page, itemsPerPage, function(err, items, total) {
                 if (err) {
-                    request.log(['error', 'list', 'user'], err);
+                    request.log([
+                        'error', 'list', 'user'
+                    ], err);
                     reply(Boom.badRequest(ErrorHandler.getErrorMessage(err)));
                 }
                 let totalPage = Math.ceil(total / itemsPerPage);
-                let dataRes = { status: 1, totalItems: total, totalPage: totalPage, currentPage: page, itemsPerPage: itemsPerPage, numberVisiblePages: numberVisiblePages, items: items };
+                let dataRes = {
+                    status: 1,
+                    totalItems: total,
+                    totalPage: totalPage,
+                    currentPage: page,
+                    itemsPerPage: itemsPerPage,
+                    numberVisiblePages: numberVisiblePages,
+                    items: items
+                };
                 reply(dataRes);
             });
         },
@@ -98,13 +121,16 @@ function find(){
     };
 }
 
-function findOne(){
+function findOne() {
     return {
         auth: 'jwt',
         tags: ['api'],
         description: 'Get user',
         pre: [
-        { method: getById, assign: 'user' }
+            {
+                method: getById,
+                assign: 'user'
+            }
         ],
         handler: function(request, reply) {
             let user = request.pre.user;
@@ -117,10 +143,13 @@ function findOne(){
     };
 }
 
-function create(){
+function create() {
     return {
         pre: [
-        { method: getUserByEmail, assign: 'userByEmail' }
+            {
+                method: getUserByEmail,
+                assign: 'userByEmail'
+            }
         ],
         handler: function(request, reply) {
             if (request.pre.userByEmail) {
@@ -168,24 +197,27 @@ function create(){
     };
 }
 
-function update(){
+function update() {
     return {
         auth: 'jwt',
         pre: [
-        { method: getById, assign: 'user' }
+            {
+                method: getById,
+                assign: 'user'
+            }
         ],
         handler: function(request, reply) {
             let user = request.pre.user;
-            if(!request.payload.password){
+            if (!request.payload.password) {
                 delete request.payload.password;
-            }else if(request.payload.password !== request.payload.cfpassword) {
+            } else if (request.payload.password !== request.payload.cfpassword) {
                 return reply(Boom.badRequest('Confirm new password does not match'));
             }
             delete request.payload.cfpassword;
 
             user = _.extend(user, request.payload);
 
-            let saveUser = function(user){
+            let saveUser = function(user) {
                 let promise = user.save();
                 promise.then(function(user) {
                     reply(user);
@@ -199,8 +231,7 @@ function update(){
                     user.password = hash;
                     saveUser(user);
                 });
-            }
-            else {
+            } else {
                 saveUser(user);
             }
         },
@@ -219,47 +250,53 @@ function update(){
     };
 }
 
-function destroy(){
+function destroy() {
     return {
         auth: 'jwt',
         handler: function(request, reply) {
-            User.findOne({_id: request.params.id}).exec(function(err, doc){
-                if(err) return reply(Boom.forbidden("403"));
+            User.findOne({_id: request.params.id}).exec(function(err, doc) {
+                if (err)
+                    return reply(Boom.forbidden("403"));
                 doc.deletedAt = new Date();
-                doc.save().then(function(doc1){
-                    return reply({success:true});
-                }).catch(function(err1){
-                    if(err) return reply(Boom.forbidden("403"));
-                });
+                doc.save().then(function(doc1) {
+                    return reply({success: true});
+                }).catch(function(err1) {
+                    if (err)
+                        return reply(Boom.forbidden("403"));
+                    }
+                );
             });
         }
     };
 }
 
-function changeStatus(){
+function changeStatus() {
     return {
         handler: function(request, reply) {
-            User.findOne({_id: request.params.id}).exec(function(err, doc){
-                if(err) return reply(Boom.forbidden("403"));
+            User.findOne({_id: request.params.id}).exec(function(err, doc) {
+                if (err)
+                    return reply(Boom.forbidden("403"));
                 doc.status = request.params.status;
-                doc.save().then(function(doc1){
-                    return reply({success:true});
-                }).catch(function(err1){
-                    if(err) return reply(Boom.forbidden("403"));
-                });
+                doc.save().then(function(doc1) {
+                    return reply({success: true});
+                }).catch(function(err1) {
+                    if (err)
+                        return reply(Boom.forbidden("403"));
+                    }
+                );
             });
         }
     };
 }
 
-function login(){
+function login() {
     return {
-        handler: function (request, reply) {
+        handler: function(request, reply) {
             let cookieOptions = request.server.configManager.get('web.cookieOptions');
             let {email, password} = request.payload;
             let role = request.server.configManager.get('web.allRoles');
             let promise = User.findOne({email: email, deletedAt: null}).exec();
-            
+
             //role la tac ca cac role co dc cua he thong.
             promise.then(user => {
                 if (!user || (user && user.status !== true)) {
@@ -270,16 +307,18 @@ function login(){
                     return reply(Boom.unauthorized('Incorrect role'));
                 }
 
-                user.compare(password, function (err, result) {
+                user.compare(password, function(err, result) {
                     if (err || !result) {
-                        request.log(['error', 'login'], err);
+                        request.log([
+                            'error', 'login'
+                        ], err);
                         return reply(Boom.unauthorized('Incorrect password'));
                     }
 
                     if (result) {
                         var session = {
                             valid: true,
-                            uid : user._id.toString(),
+                            uid: user._id.toString(),
                             id: user._id.toString(),
                             name: user.name,
                             email: user.email,
@@ -293,14 +332,11 @@ function login(){
                         const secret = request.server.configManager.get('web.jwt.secret');
                         redisClient.set(session.id, JSON.stringify(session));
                         var token = JWT.sign(session, secret);
-                        console.log(token,cookieOptions);
-                        reply({ token: token })
-                        .header('Authorization', token)
-                        .state('token', token, cookieOptions);
+                        console.log(token, cookieOptions);
+                        reply({token: token}).header('Authorization', token).state('token', token, cookieOptions);
                     }
                 });
-            })
-            .catch(err => {
+            }).catch(err => {
                 return reply(Boom.badRequest(ErrorHandler.getErrorMessage(err)));
             });
         },
@@ -316,19 +352,23 @@ function login(){
     };
 }
 
-function logout(){
+function logout() {
     return {
         auth: 'jwt',
-        handler: function (request, reply) {
+        handler: function(request, reply) {
             const redisClient = request.server.redis;
             const sessionId = request.auth.credentials.id;
-            redisClient.get(sessionId, function (err, result) {
+            redisClient.get(sessionId, function(err, result) {
                 if (err) {
-                    request.log(['error', 'redis', 'lgout'], err);
+                    request.log([
+                        'error', 'redis', 'lgout'
+                    ], err);
                 }
 
-                let session = result ? JSON.parse(result) : {};
-                if(session.id){
+                let session = result
+                    ? JSON.parse(result)
+                    : {};
+                if (session.id) {
                     session.valid = false;
                     session.ended = new Date().getTime();
                     redisClient.set(session.id, JSON.stringify(session));
@@ -336,50 +376,55 @@ function logout(){
 
             });
             let cookieOptions = request.server.configManager.get('web.cookieOptions');
-            reply({ status: true })
-            .header("Authorization", '')
-            .unstate('token', cookieOptions);
+            reply({status: true}).header("Authorization", '').unstate('token', cookieOptions);
         }
     };
 }
 
-function verifyEmail(){
+function verifyEmail() {
     return {
         pre: [
-        { method: getUserByEmail, assign: 'userByEmail' }
+            {
+                method: getUserByEmail,
+                assign: 'userByEmail'
+            }
         ],
         validate: {
             payload: {
                 email: Joi.string().email().required().description('Email')
             }
         },
-        handler: function (request, reply) {
+        handler: function(request, reply) {
             if (request.pre.userByEmail) {
-                return reply({ status: 0, message: 'Email is exist' });
+                return reply({status: 0, message: 'Email is exist'});
             }
-            reply({ status: 1, message: 'Email is not exist' });
+            reply({status: 1, message: 'Email is not exist'});
         },
         tags: ['api'],
         description: 'Verify Email Exist',
         plugins: {
             'hapi-swagger': {
-                responses: { '400': { 'description': 'Bad Request' } },
+                responses: {
+                    '400': {
+                        'description': 'Bad Request'
+                    }
+                },
                 payloadType: 'form'
             }
         }
     };
 }
 
-function active(){
+function active() {
     return {
         validate: {
             query: {
-                token: Joi.string().required().description('Token'),
+                token: Joi.string().required().description('Token')
             }
         },
-        handler: function (request, reply) {
+        handler: function(request, reply) {
             let token = request.query.token;
-            let promise = User.findOne({ activeToken: token }).exec();
+            let promise = User.findOne({activeToken: token}).exec();
             promise.then(user => {
                 if (!user) {
                     return reply(Boom.badRequest('Invalid Token'));
@@ -387,13 +432,17 @@ function active(){
                 user.activeToken = '';
                 user.status = 1;
                 user.save().then(user => {
-                    reply({ status: 1 });
+                    reply({status: 1});
                 }).catch(err => {
-                    request.log(['error', 'active'], err);
+                    request.log([
+                        'error', 'active'
+                    ], err);
                     return reply(Boom.badRequest(ErrorHandler.getErrorMessage(err)));
                 });
             }).catch(err => {
-                request.log(['error', 'active'], err);
+                request.log([
+                    'error', 'active'
+                ], err);
                 return reply(Boom.badRequest(ErrorHandler.getErrorMessage(err)));
             });
         },
@@ -401,34 +450,40 @@ function active(){
         description: 'Active User',
         plugins: {
             'hapi-swagger': {
-                responses: { '400': { 'description': 'Bad Request' } },
+                responses: {
+                    '400': {
+                        'description': 'Bad Request'
+                    }
+                },
                 payloadType: 'form'
             }
         }
     };
 }
 
-function facebookLogin(){
+function facebookLogin() {
     return {
-        handler: function (request, reply) {
+        handler: function(request, reply) {
             reply();
         }
     };
 }
 
-function googleLogin(){
+function googleLogin() {
     return {
-        handler: function (request, reply) {
+        handler: function(request, reply) {
             reply();
         }
     };
 }
 
-function fogotPassword(){
+function fogotPassword() {
     return {
-        handler: function (request, reply) {
+        handler: function(request, reply) {
             const email = request.payload.email;
-            const promise = User.findOne({ email: email }, '-password').exec();
+            const promise = User.findOne({
+                email: email
+            }, '-password').exec();
             promise.then(user => {
                 if (!user) {
                     return reply(Boom.notFound('Email is not exist'));
@@ -440,8 +495,11 @@ function fogotPassword(){
                 promise.then(user => {
                     //@TODO send email to user
                     //send welcome and activation email to user
-                    UserEmail.sendForgotPasswordEmail(request, {name: user.name, address: user.email}, user);
-                    return reply({ status: 1 });
+                    UserEmail.sendForgotPasswordEmail(request, {
+                        name: user.name,
+                        address: user.email
+                    }, user);
+                    return reply({status: 1});
                 }).catch(err => {
                     return reply(Boom.badRequest(ErrorHandler.getErrorMessage(err)));
                 });
@@ -461,16 +519,20 @@ function fogotPassword(){
         description: 'Forgot Password',
         plugins: {
             'hapi-swagger': {
-                responses: { '400': { 'description': 'Bad Request' } },
+                responses: {
+                    '400': {
+                        'description': 'Bad Request'
+                    }
+                },
                 payloadType: 'form'
             }
         }
     };
 }
 
-function resetPassword(){
+function resetPassword() {
     return {
-        handler: function (request, reply) {
+        handler: function(request, reply) {
             let {newPassword, confirmNewPassword} = request.payload;
             if (newPassword != confirmNewPassword) {
                 return reply(Boom.badRequest('Confirm new password does not match'));
@@ -479,22 +541,24 @@ function resetPassword(){
             if (!token) {
                 return reply(Boom.badRequest('Token is empty'));
             }
-            let promise = User.findOne({ resetPasswordToken: token }).exec();
+            let promise = User.findOne({resetPasswordToken: token}).exec();
             promise.then(user => {
                 if (!user) {
                     reply(Boom.badRequest('Token is incorrect'));
                 }
                 user.resetPasswordToken = '';
                 user.resetPasswordExpires = null;
-                user.hashPassword(newPassword, function (err, hash) {
+                user.hashPassword(newPassword, function(err, hash) {
                     user.password = hash;
                     //save changed information's user
                     user.save().then(user => {
                         if (user) {
-                            reply({ status: 1, message: 'Password changed successful.' });
+                            reply({status: 1, message: 'Password changed successful.'});
                         }
                     }).catch(err => {
-                        request.log(['error', 'reset'], err);
+                        request.log([
+                            'error', 'reset'
+                        ], err);
                         return reply(Boom.badRequest(ErrorHandler.getErrorMessage(err)));
                     });
                 });
@@ -507,7 +571,11 @@ function resetPassword(){
         tags: ['api'],
         plugins: {
             'hapi-swagger': {
-                responses: { '400': { 'description': 'Bad Request' } },
+                responses: {
+                    '400': {
+                        'description': 'Bad Request'
+                    }
+                },
                 payloadType: 'form'
             }
         },
@@ -517,46 +585,53 @@ function resetPassword(){
                 confirmNewPassword: Joi.string().required().description('Confirm Password')
             },
             query: {
-                token: Joi.string().required().description('Token'),
+                token: Joi.string().required().description('Token')
             }
         }
     };
 }
 
-function changePassword(){
+function changePassword() {
     return {
         auth: 'jwt',
         pre: [
-        { method: getAuthUser, assign: 'user' }
+            {
+                method: getAuthUser,
+                assign: 'user'
+            }
         ],
-        handler: function (request, reply) {
+        handler: function(request, reply) {
             let user = request.pre.user;
             if (!user) {
                 return reply(Boom.notFound('User is not found'));
             }
             let {currentPassword, newPassword, confirmNewPassword} = request.payload;
             //validate new password and confirm password
-            console.log(request.payload,user);
+            console.log(request.payload, user);
             if (newPassword != confirmNewPassword) {
                 return reply(Boom.badRequest('Confirm new password does not match'));
             }
             //validate current passwordauthenticate
-            user.compare(currentPassword, function (err, result) {
+            user.compare(currentPassword, function(err, result) {
                 if (err) {
-                    request.log(['error', 'changepassword'], err);
+                    request.log([
+                        'error', 'changepassword'
+                    ], err);
                 }
                 if (!result) {
                     return reply(Boom.badRequest('Incorrect Password'));
                 }
-                user.hashPassword(newPassword, function (err, hash) {
+                user.hashPassword(newPassword, function(err, hash) {
                     user.password = hash;
                     //save changed information's user
                     user.save().then(user => {
                         if (user) {
-                            reply({ status: 1, message: 'Password changed successful.' });
+                            reply({status: 1, message: 'Password changed successful.'});
                         }
                     }).catch(err => {
-                        request.log(['error', 'changepassword'], err);
+                        request.log([
+                            'error', 'changepassword'
+                        ], err);
                         return reply(Boom.badRequest(ErrorHandler.getErrorMessage(err)));
                     });
                 });
@@ -566,7 +641,11 @@ function changePassword(){
         tags: ['api'],
         plugins: {
             'hapi-swagger': {
-                responses: { '400': { 'description': 'Bad Request' } },
+                responses: {
+                    '400': {
+                        'description': 'Bad Request'
+                    }
+                },
                 payloadType: 'form'
             }
         },
@@ -580,13 +659,16 @@ function changePassword(){
     };
 }
 
-function profile(){
+function profile() {
     return {
         pre: [
-        { method: getAuthUser, assign: 'user' }
+            {
+                method: getAuthUser,
+                assign: 'user'
+            }
         ],
         auth: 'jwt',
-        handler: function (request, reply) {
+        handler: function(request, reply) {
             const user = request.pre.user;
             if (user) {
                 reply(user);
@@ -601,7 +683,9 @@ Middleware
 function getAuthUser(request, reply) {
     let id = request.auth.credentials.id;
 
-    User.findOne({ _id: id }, function (err, user) {
+    User.findOne({
+        _id: id
+    }, function(err, user) {
         if (err) {
             request.log(['error'], err);
         }
@@ -611,7 +695,7 @@ function getAuthUser(request, reply) {
 
 function getById(request, reply) {
     const id = request.params.id || request.payload.id;
-    let promise = User.findOne({ '_id': id });
+    let promise = User.findOne({'_id': id});
 
     promise.then(function(user) {
         return reply(user);
@@ -624,7 +708,9 @@ function getById(request, reply) {
 function getUserByEmail(request, reply) {
     const email = request.payload.email;
 
-    User.findOne({email: email}, function(err, user) {
+    User.findOne({
+        email: email
+    }, function(err, user) {
         if (err) {
             request.log(['error'], err);
         }

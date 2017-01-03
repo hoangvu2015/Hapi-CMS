@@ -8,7 +8,7 @@ exports.register = function (server, options, next) {
 
     function validate(decoded, request, callback) {
         const redisClient = server.redis;
-        
+
         redisClient.get(new String(decoded.id).toString(), function (rediserror, result) {
             if (rediserror) {
                 server.log(['error','redis','validateauth'], rediserror);
@@ -16,7 +16,7 @@ exports.register = function (server, options, next) {
 
             let session;
             if (result) {
-                session = JSON.parse(result);                
+                session = JSON.parse(result);
             }else{
                 return callback(rediserror, false);
             }
@@ -39,7 +39,7 @@ exports.register = function (server, options, next) {
             },
             verifyOptions: { ignoreExpiration: false, algorithms: ['HS256'] }
         });
-        
+
         return next();
     };
 
@@ -50,4 +50,3 @@ exports.register.attributes = {
     name: 'app-auth-jwt2',
     dependencies: ['app-redis']
 };
-
