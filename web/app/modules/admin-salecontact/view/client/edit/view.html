@@ -11,15 +11,12 @@ Content Wrapper. Contains page content -->
 			<li class="active">Sale Contact</li>
 		</ol>
 	</section>
-
 	<!-- Main content -->
 	<section class="content">
-
 		<!-- SELECT2 EXAMPLE -->
 		<div class="box box-default">
 			<div class="box-header with-border">
 				<h3 class="box-title">[[userEdit.queryParams.id ? 'Cập nhật' : 'Thêm mới']]</h3>
-
 				<div class="box-tools pull-right">
 					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
@@ -33,10 +30,11 @@ Content Wrapper. Contains page content -->
 						<div class="toolbar">
 							<div class="form-inline pull-right">
 								<div class="form-group form-action">
-									<button bz-submit type="submit" class="btn btn-success btn-flat btn-submit" ng-class="{'loading-btn': saleContactEdit.lockForm}" ng-disabled="saleContactEdit.lockForm">
+									<button bz-submit type="submit" class="btn btn-success btn-flat btn-submit" ng-class="{'loading-btn': saleContactEdit.lockForm}"
+										ng-disabled="saleContactEdit.lockForm">
 										<i class="glyphicon glyphicon-floppy-disk" ng-if="!saleContactEdit.lockForm"></i>
 										<span>Lưu</span>
-									</button>
+										</button>
 									<a ui-sref="contactsaleman({uid: authSvc.getProfile().uid})" class="btn btn-primary btn-flat">
 										<i class="glyphicon glyphicon-remove"></i>
 										<span>Hủy bỏ</span>
@@ -51,7 +49,8 @@ Content Wrapper. Contains page content -->
 								<!-- Tên -->
 								<div class="form-group">
 									<label class="control-label" for="txtName">Tên <span class="required">*</span></label>
-									<input id="txtName" name="txtName" class="form-control" type="text" ng-model="saleContactEdit.formData.level_1.name" ng-pattern="/[a-zA-Z0-9]/" required />
+									<input id="txtName" name="txtName" class="form-control" type="text" ng-model="saleContactEdit.formData.level_1.name" ng-pattern="/[a-zA-Z0-9]/"
+										required />
 									<div class="messages-error" ng-messages="frmSaleContact.txtName.$error" ng-if="saleContactEdit.submitted">
 										<div ng-message="required">Bạn chưa nhập tên.</div>
 										<div ng-message="pattern">Tên không được chứa các ký tự đặc biệt.</div>
@@ -60,11 +59,12 @@ Content Wrapper. Contains page content -->
 								<!-- Email -->
 								<div class="form-group">
 									<label class="control-label" for="txtEmail">Email <span ng-show="!saleContactEdit.queryParams._sale_usermember" class="required">*</span></label>
-
-									<input ng-if="saleContactEdit.queryParams._sale_usermember" class="form-control" id="txtEmail" name="txtEmail" type="text"  ng-model="saleContactEdit.formData.level_1.email" ng-pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" />
-
-									<input ng-if="!saleContactEdit.queryParams._sale_usermember" class="form-control" id="txtEmail" name="txtEmail" type="text"  ng-model="saleContactEdit.formData.level_1.email" ng-pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" />
-
+									<input ng-if="saleContactEdit.queryParams._sale_usermember" class="form-control" id="txtEmail" name="txtEmail" type="text"
+										ng-model="saleContactEdit.formData.level_1.email" ng-pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/"
+									/>
+									<input ng-if="!saleContactEdit.queryParams._sale_usermember" class="form-control" id="txtEmail" name="txtEmail" type="text"
+										ng-model="saleContactEdit.formData.level_1.email" ng-pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/"
+									/>
 									<div class="messages-error" ng-messages="frmSaleContact.txtEmail.$error" ng-if="saleContactEdit.submitted">
 										<div ng-message="required">Bạn chưa nhập email.</div>
 										<div ng-message="pattern">Email không hợp lệ.</div>
@@ -78,7 +78,8 @@ Content Wrapper. Contains page content -->
 								<!-- Điện thoại -->
 								<div class="form-group">
 									<label class="control-label" for="txtPhone">Điện thoại <span class="required">*</span></label>
-									<input id="txtPhone" name="txtPhone" class="form-control" type="text" ng-model="saleContactEdit.formData.level_1.phone" ng-pattern="/^[0][0-9]*$/" required />
+									<input id="txtPhone" name="txtPhone" class="form-control" type="text" ng-model="saleContactEdit.formData.level_1.phone" ng-pattern="/^[0][0-9]*$/"
+										required />
 									<div class="messages-error" ng-messages="frmSaleContact.txtPhone.$error" ng-if="saleContactEdit.submitted" ng-messages-multiple>
 										<div ng-message="required">Bạn chưa nhập số điện thoại.</div>
 										<div ng-message="pattern">Số điện thoại không hợp lệ, nhập số 0 trước.</div>
@@ -87,7 +88,8 @@ Content Wrapper. Contains page content -->
 								<!-- Điện thoại 2 -->
 								<div class="form-group">
 									<label class="control-label" for="txtPhone2">Điện thoại 2</label>
-									<input id="txtPhone2" name="txtPhone2" class="form-control" type="text" ng-model="saleContactEdit.formData.level_1.phone2" />
+									<input id="txtPhone2" name="txtPhone2" class="form-control" type="text" ng-model="saleContactEdit.formData.level_1.phone2"
+									/>
 								</div>
 								<!-- Độ tuổi -->
 								<div class="form-group">
@@ -185,10 +187,11 @@ Content Wrapper. Contains page content -->
 							<i class="glyphicon glyphicon-remove"></i>
 							<span>Hủy bỏ</span>
 						</a>
-						<button bz-submit type="submit" class="btn btn-success btn-flat btn-submit" ng-class="{'loading-btn': saleContactEdit.lockForm}" ng-disabled="saleContactEdit.lockForm">
+						<button bz-submit type="submit" class="btn btn-success btn-flat btn-submit" ng-class="{'loading-btn': saleContactEdit.lockForm}"
+							ng-disabled="saleContactEdit.lockForm">
 							<i class="glyphicon glyphicon-floppy-disk" ng-if="!saleContactEdit.lockForm"></i>
 							<span>Lưu</span>
-						</button>
+							</button>
 					</div>
 					<!-- <pre>[[saleContactEdit.formData | json]]</pre> -->
 				</form>
@@ -196,7 +199,6 @@ Content Wrapper. Contains page content -->
 			<!-- /.box-body -->
 		</div>
 		<!-- /.box -->
-
 	</section>
 	<!-- /.content -->
 </div>

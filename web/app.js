@@ -20,7 +20,7 @@ server.connection({
 });
 */
 let connections = config.get('web.connections');
-connections.forEach(function(config) {
+connections.forEach(function (config) {
     server.connection(config);
 }, this);
 

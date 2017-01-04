@@ -12,7 +12,7 @@ SITE
 
 /* Load file js main vào footer */
 gulp.task('site-injectJS', () => {
-    /* inject Global, Utils, Angular JS */
+  /* inject Global, Utils, Angular JS */
   var srcAngular = gulp.src([
     './app/modules/web-*/view/client/**/filter.js',
     './app/modules/web-*/view/client/**/directive.js',
@@ -25,31 +25,35 @@ gulp.task('site-injectJS', () => {
 
   var srcGlobalUtil = gulp.src([
     './public/assets/site/scripts/*.js', './public/assets/site/scripts/utils/*.js'
-  ], {read: false})
+  ], { read: false })
 
   return gulp.src('app/views/layouts/web/**/footer.html')
     /* Inject bower */
-        .pipe(wiredep({directory: './public/assets/site/bower_components', bowerJson: require('../public/assets/site/bower.json'), ignorePath: '../../../../../public/'}))
+    .pipe(wiredep({
+      directory: './public/assets/site/bower_components',
+      bowerJson: require('../public/assets/site/bower.json'),
+      ignorePath: '../../../../../public/'
+    }))
     /* Inject Module Angular */
-        .pipe(inject(srcAngular, {
-          name: 'AngularJs',
-          addRootSlash: false,
-          transform: function (filePath, file, i, length) {
-            var newPath = filePath.replace('app/', '')
-            return '<script src="' + newPath + '"></script>'
-          }
-        }))
+    .pipe(inject(srcAngular, {
+      name: 'AngularJs',
+      addRootSlash: false,
+      transform: function (filePath, file, i, length) {
+        var newPath = filePath.replace('app/', '')
+        return '<script src="' + newPath + '"></script>'
+      }
+    }))
     /* Inject Libs */
-        .pipe(inject(srcGlobalUtil, {
-          name: 'Global, Utils',
-          addRootSlash: false,
-          transform: function (filePath, file, i, length) {
-            var newPath = filePath.replace('public/', '')
-            return '<script src="' + newPath + '"></script>'
-          }
-        }))
+    .pipe(inject(srcGlobalUtil, {
+      name: 'Global, Utils',
+      addRootSlash: false,
+      transform: function (filePath, file, i, length) {
+        var newPath = filePath.replace('public/', '')
+        return '<script src="' + newPath + '"></script>'
+      }
+    }))
     /*  Dest Inject  */
-        .pipe(gulp.dest('app/views/layouts/web'))
+    .pipe(gulp.dest('app/views/layouts/web'))
 })
 
 /**************************************************
@@ -57,7 +61,7 @@ ADMIN
 **************************************************/
 /* Load file js main vào footer */
 gulp.task('admin-injectJS', () => {
-    /* inject Global, Utils, Angular JS */
+  /* inject Global, Utils, Angular JS */
   var srcAngular = gulp.src([
     './app/modules/admin-*/view/client/**/router.js',
     './app/modules/admin-*/view/client/**/filter.js',
@@ -71,31 +75,31 @@ gulp.task('admin-injectJS', () => {
 
   var srcGlobalUtil = gulp.src([
     './public/assets/admin/scripts/*.js', './public/assets/admin/scripts/utils/*.js'
-  ], {read: false})
+  ], { read: false })
 
   return gulp.src('app/views/layouts/admin/**/footer.html')
     /* Inject bower */
-        .pipe(wiredep({
-          directory: './public/assets/admin/bower_components',
-          bowerJson: require('../public/assets/admin/bower.json'),
-          ignorePath: '../../../../../public/'
-        }))
+    .pipe(wiredep({
+      directory: './public/assets/admin/bower_components',
+      bowerJson: require('../public/assets/admin/bower.json'),
+      ignorePath: '../../../../../public/'
+    }))
     /* Inject Module Angular */
-        .pipe(inject(srcAngular, {
-          name: 'AngularJs',
-          addRootSlash: false,
-          transform: function (filePath, file, i, length) {
-            var newPath = filePath.replace('app/', '')
-            return '<script src="' + newPath + '"></script>'
-          }
-        }))
+    .pipe(inject(srcAngular, {
+      name: 'AngularJs',
+      addRootSlash: false,
+      transform: function (filePath, file, i, length) {
+        var newPath = filePath.replace('app/', '')
+        return '<script src="' + newPath + '"></script>'
+      }
+    }))
     /* Inject Libs */
-        .pipe(inject(srcGlobalUtil, {
-          name: 'Global, Utils',
-          addRootSlash: false,
-          transform: function (filePath, file, i, length) {
-            var newPath = filePath.replace('public/', '')
-            return '<script src="' + newPath + '"></script>'
-          }
-        })).pipe(gulp.dest('app/views/layouts/admin'))
+    .pipe(inject(srcGlobalUtil, {
+      name: 'Global, Utils',
+      addRootSlash: false,
+      transform: function (filePath, file, i, length) {
+        var newPath = filePath.replace('public/', '')
+        return '<script src="' + newPath + '"></script>'
+      }
+    })).pipe(gulp.dest('app/views/layouts/admin'))
 })
