@@ -14,7 +14,6 @@ SITE
 gulp.task('site-injectJS', () => {
     /*inject Global, Utils, Angular JS*/
     var srcAngular = gulp.src([
-        './app/modules/web-*/view/client/**/router.js',
         './app/modules/web-*/view/client/**/filter.js',
         './app/modules/web-*/view/client/**/directive.js',
         './app/modules/web-*/view/client/**/controller.js',
@@ -48,7 +47,9 @@ gulp.task('site-injectJS', () => {
             var newPath = filePath.replace('public/', '');
             return '<script src="' + newPath + '"></script>';
         }
-    })).pipe(gulp.dest('app/views/layouts/web'));
+    }))
+    /* Dest Inject  */
+        .pipe(gulp.dest('app/views/layouts/web'));
 });
 
 /**************************************************

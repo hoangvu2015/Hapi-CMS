@@ -8,4 +8,6 @@ Modules Load Auto
 *******************************************************************/
 /*inject-module:scss*/
 @import "../../../../app/modules/web-index/view/client/_style.scss";
+@import "../../../../app/modules/web-auth/view/client/login/_style.scss";
+@import "../../../../app/modules/web-index/view/client/home/_style.scss";
 /*endinject*/

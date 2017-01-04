@@ -8,13 +8,14 @@ module.exports = {
 
 function index() {
     return {
-        auth: {
-            strategy: 'jwt',
-            mode: 'try'
-            // scope: ['admin']
-        },
+        // auth: {
+        //     strategy: 'jwt',
+        //     mode: 'try',
+        //     scope: ['admin']
+        // },
         handler: function(request, reply) {
-            return reply.view('web-index/view/home', null, {layout: 'web/layout'})
+          console.log('okok');
+            return reply.view('web-index/view/client/home/view', {test:999}, {layout: 'web/layout'})
         }
     };
 }

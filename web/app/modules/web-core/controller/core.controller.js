@@ -89,7 +89,6 @@ function handleError(request, reply) {
 
     const error = response;
     const statusCode = error.output.statusCode;
-
     if (statusCode === 404) {
         request.log([
             'error', 'notfound'

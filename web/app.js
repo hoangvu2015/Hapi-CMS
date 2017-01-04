@@ -13,7 +13,7 @@ server.register({
 
 const config = server.plugins['hapi-kea-config'];
 console.log("WEB PORT: " + config.get('web.port'));
-console.log('okokoko',config.get('web.context.settings.services'));
+console.log('okokoko', config.get('web.context.settings.services'));
 /*
 server.connection({
     port: parseInt(process.env.PORT, 10) || config.get('web.port'),
@@ -31,7 +31,7 @@ server.start((err) => {
     if (err) {
         throw err;
     }
-    //server.log('info', 'Server running at: ' + server.info.uri);F
+    //server.log('info', 'Server running at: ' + server.info.uri);
 });
 
 module.exports = server;

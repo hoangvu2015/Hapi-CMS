@@ -25,4 +25,17 @@ Description: Bootstrap variables
 Modules Load Auto
 *******************************************************************/
 /*inject-module:scss*/
+#mod-home {
+  color: red;
+  padding-top: 30px;
+}
+
+#mod-home .home-partial {
+  color: yellow;
+}
+
+#mod-home-index {
+  color: blue;
+}
+
 /*endinject*/
