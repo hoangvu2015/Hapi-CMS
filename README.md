@@ -57,6 +57,13 @@ gulp
 - Admin CMS: [http://localhost:9002/](http://localhost:9002/documentation)
 - Web:  [http://localhost:9006/](http://localhost:9006/)
 
+##Solutions/Resources
+- [Bcrypt](https://github.com/kelektiv/node.bcrypt.js) ~ Mã hóa
+- [Bluebird](http://bluebirdjs.com/docs/getting-started.html) ~ Promise
+- [Elasticsearch](https://www.elastic.co/) ~ Search
+- [Mongoosastic](https://github.com/mongoosastic/mongoosastic) ~ Elasticsearch cho mongo
+- [Slug](https://github.com/dodo/node-slug) ~ Format Slug
+
 ##Cấu trúc:
 ```bash
 Project
